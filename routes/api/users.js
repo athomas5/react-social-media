@@ -2,6 +2,7 @@ const express = require("express");
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const passport = require('passport');
 const router = express.Router();
 
 const User = require('../../models/User');
@@ -65,6 +66,17 @@ router.post("/register", (req, res) => {
     });
 });
 
+// @route   GET api/users/current
+// @desc    Return current user
+// @access  Private
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+  res.json({
+    id: req.user.id,
+    name: req.user.name,
+    email: req.user.email
+  });
+});
+
 function createUser(req, avatar) {
   return  new User({
     name: req.body.name,
@@ -81,7 +93,6 @@ function createAvatar(req) {
     default: 'mm'
   });
 }
-
 
 function saveUserToDB(res, newUser) {
   res.send(newUser);
