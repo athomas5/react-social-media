@@ -8,6 +8,9 @@ const router = express.Router();
 const User = require('../../models/User');
 const keys = require('../../config/keys');
 
+// Load input validation
+const validateRegisterInput = require('../../validation/register');
+
 // @route   GET api/users/test
 // @desc    Tests users route
 // @access  Public
@@ -28,14 +31,7 @@ router.post('/login', (req, res) => {
       bcrypt.compare(password, user.password)
         .then(isMatch => {
           if (isMatch) {
-            const payload = { id: user.id, name: user.name, avatar: user.avatar };
-            
-            jwt.sign(payload, keys.secretOrKey,{ expiresIn: 3600 } , (err, token) => {
-              res.json({ 
-                success: true, 
-                token: 'Bearer ' + token
-              });
-            });
+            handleJwt(res, user);
           } else {
             return res.status(400).json({ password: 'Incorrect Password' });
           }
@@ -47,10 +43,17 @@ router.post('/login', (req, res) => {
 // @desc    Register user
 // @access  Public
 router.post("/register", (req, res) => {
+  const { errors, isValid } = validateRegisterInput(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
   User.findOne({ email: req.body.email })
     .then(user => {
       if (user) {
-        return res.status(400).json({ email: 'Email already exists' });
+        errors.email = 'Email already exists';
+        return res.status(400).json(errors);
       } else {
         const avatar = createAvatar(req);
         const newUser = createUser(req, avatar);
@@ -77,29 +80,40 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
   });
 });
 
-function createUser(req, avatar) {
-  return  new User({
+const createUser = (req, avatar) => (
+  new User({
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
     avatar
-  });
-}
+  })
+);
 
-function createAvatar(req) {
-  return gravatar.url(req.body.email, {
+const createAvatar = req => (
+  gravatar.url(req.body.email, {
     size: 200,
     rating: 'pg',
     default: 'mm'
-  });
-}
+  })
+);
 
-function saveUserToDB(res, newUser) {
+const saveUserToDB = (res, newUser) => {
   res.send(newUser);
   newUser
     .save()
     .then(user => res.json(user))
     .catch(err => console.log(err));
 }
+
+const handleJwt = (res, { id, name, avatar }) => {
+  const payload = { id, name, avatar };
+
+  jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
+    res.json({
+      success: true,
+      token: 'Bearer ' + token
+    });
+  });
+};
 
 module.exports = router;
