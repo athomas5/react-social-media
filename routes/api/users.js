@@ -10,6 +10,7 @@ const keys = require('../../config/keys');
 
 // Load input validation
 const validateRegisterInput = require('../../validation/register');
+const validateLoginInput = require('../../validation/login');
 
 // @route   GET api/users/test
 // @desc    Tests users route
@@ -20,20 +21,27 @@ router.get("/test", (req, res) => res.json({ msg: "Users Works!" }));
 // @desc    Login user / Retur JWT
 // @access  Public
 router.post('/login', (req, res) => {
+  const { errors, isValid } = validateLoginInput(req.body);
   const email = req.body.email;
   const password = req.body.password;
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
 
   User.findOne({ email })
     .then(user => {
       if (!user) {
-        return res.status(404).json({ email: 'User not found' });
+        errors.email = 'User not found';
+        return res.status(404).json(errors);
       } 
       bcrypt.compare(password, user.password)
         .then(isMatch => {
           if (isMatch) {
             handleJwt(res, user);
           } else {
-            return res.status(400).json({ password: 'Incorrect Password' });
+            errors.password = 'Incorrect Password';
+            return res.status(400).json(errors);
           }
         })
     });
@@ -44,7 +52,7 @@ router.post('/login', (req, res) => {
 // @access  Public
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
-
+  
   if (!isValid) {
     return res.status(400).json(errors);
   }
@@ -98,7 +106,6 @@ const createAvatar = req => (
 );
 
 const saveUserToDB = (res, newUser) => {
-  res.send(newUser);
   newUser
     .save()
     .then(user => res.json(user))
