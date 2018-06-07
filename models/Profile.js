@@ -60,9 +60,60 @@ const ProfileSchema = new Schema({
         default: false
       },
       description: {
-        type: String,
-        required: false
+        type: String
       }
     }
-  ]
+  ],
+  education: [
+    {
+      school: {
+        type: String,
+        required: true
+      },
+      degree: {
+        type: String,
+        required: true
+      },
+      fieldofstudy: {
+        type: String
+      },
+      from: {
+        type: Date,
+        required: true
+      },
+      to: {
+        type: Date
+      },
+      current: {
+        type: Boolean,
+        default: false
+      },
+      description: {
+        type: String
+      }
+    }
+  ],
+  social: {
+    youtube: {
+      type: String
+    },
+    twitter: {
+      type: String
+    },
+    facebook: {
+      type: String
+    },
+    linkedin: {
+      type: String
+    },
+    github: {
+      type: String
+    }
+  },
+  date: {
+    type: Data,
+    default: Date.now
+  }
 });
+
+module.exports = Profile = mongoos.model('profile', ProfileSchema);
