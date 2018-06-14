@@ -105,9 +105,6 @@ const ProfileSchema = new Schema({
     },
     linkedin: {
       type: String
-    },
-    github: {
-      type: String
     }
   },
   date: {
