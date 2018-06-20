@@ -7,6 +7,8 @@ const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 
 const validateProfileInput = require('../../validation/profile');
+const validateExperienceInput = require('../../validation/experience');
+const validateEducationInput = require('../../validation/education');
 
 // @route   GET api/profile
 // @desc    Get current users profile
@@ -99,8 +101,64 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
       if (profile) {
         updateProfile(req, res, profileFields);
       } else {
-        saveProfile(req, res, profileFields);
+        saveNewProfile(req, res, profileFields);
       }
+    });
+});
+
+// @route   POST api/profile/experience
+// @desc    Add experience to profile
+// @access  Private
+router.post('/experience', passport.authenticate('jwt', { session: false }), (req, res) => {
+  const { errors, isValid } = validateExperienceInput(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
+  Profile.findOne({ user: req.user.id })
+    .then(profile => {
+      const newExp = {
+        title: req.body.title,
+        company: req.body.company,
+        location: req.body.location,
+        from: req.body.from,
+        to: req.body.to,
+        current: req.body.current,
+        description: req.body.description
+      };
+
+      // Add to experience array
+      profile.experience.unshift(newExp);
+      profile.save().then(profile => res.json(profile));
+    });
+});
+
+// @route   POST api/profile/education
+// @desc    Add experience to profile
+// @access  Private
+router.post('/education', passport.authenticate('jwt', { session: false }), (req, res) => {
+  const { errors, isValid } = validateEducationInput(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
+  Profile.findOne({ user: req.user.id })
+    .then(profile => {
+      const newEdu = {
+        school: req.body.school,
+        degree: req.body.degree,
+        fieldofStudy: req.body.fieldofStudy,
+        from: req.body.from,
+        to: req.body.to,
+        current: req.body.current,
+        description: req.body.description
+      };
+
+      // Add to experience array
+      profile.education.unshift(newEdu);
+      profile.save().then(profile => res.json(profile));
     });
 });
 
@@ -139,7 +197,7 @@ const updateProfile = (req, res, profileFields) => {
     .then(profile => res.json(profile));
 };
 
-const saveProfile = (req, res, profileFields) => {
+const saveNewProfile = (req, res, profileFields) => {
   Profile.findOne({ handle: profileFields.handle })
     .then(profile => {
       if (profile) {
