@@ -5,7 +5,7 @@ module.exports = function validateEducationInput(data) {
   let errors = {};
 
   data = convertMissingInputToEmptyString(data);
-  errors = checkUserDataForErrors(errors, data);
+  errors = checkInputDataForErrors(errors, data);
 
   return {
     errors,
@@ -54,7 +54,7 @@ const validateFrom = (errors, data) => {
   return errors;
 }
 
-const checkUserDataForErrors = (errors, data) => {
+const checkInputDataForErrors = (errors, data) => {
   errors = validateSchool(errors, data);
   errors = validateDegree(errors, data);
   errors = validateFieldofStudy(errors, data);

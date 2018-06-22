@@ -5,7 +5,7 @@ module.exports = function validateExperienceInput(data) {
   let errors = {};
 
   data = convertMissingInputToEmptyString(data);
-  errors = checkUserDataForErrors(errors, data);
+  errors = checkInputDataForErrors(errors, data);
 
   return {
     errors,
@@ -45,7 +45,7 @@ const validateFrom = (errors, data) => {
   return errors;
 }
 
-const checkUserDataForErrors = (errors, data) => {
+const checkInputDataForErrors = (errors, data) => {
   errors = validateTitle(errors, data);
   errors = validateCompany(errors, data);
   errors = validateFrom(errors, data);

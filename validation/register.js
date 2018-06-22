@@ -5,7 +5,7 @@ module.exports = function validateRegisterInput(data) {
   let errors = {};
 
   data = convertMissingInputToEmptyString(data);
-  errors = checkUserDataForErrors(errors, data);
+  errors = checkInputDataForErrors(errors, data);
 
   return {
     errors,
@@ -62,7 +62,7 @@ const validatePassword2 = (errors, data) => {
   return errors;
 }
 
-const checkUserDataForErrors = (errors, data) => {
+const checkInputDataForErrors = (errors, data) => {
   errors = validateName(errors, data);
   errors = validateEmail(errors, data);
   errors = validatePassword(errors, data);
