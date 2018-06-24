@@ -110,7 +110,7 @@ const saveUserToDB = (res, newUser) => {
 const handleJwt = (res, { id, name, avatar }) => {
   const payload = { id, name, avatar };
 
-  jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
+  jwt.sign(payload, keys.secretOrKey, { expiresIn: 86400 }, (err, token) => {
     res.json({
       success: true,
       token: 'Bearer ' + token
