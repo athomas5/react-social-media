@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Viewports
+$viewport-tablet: 767px;
+$viewport-desktop: 1140px;
+
+p {
+  color: pink;
+}
