@@ -1,12 +1,13 @@
 
-@import '../../../shared-styles/styles';
+@import '../../../shared-styles/styles.scss';
+@import '../../../shared-styles/utils.scss';
 
-@import './styles/mobile';
+@import './styles/mobile.scss';
 
 @media (min-width: $viewport-tablet) {
-  @import './styles/tablet';
+  @import './styles/tablet.scss';
 }
 
 @media (min-width: $viewport-desktop) {
-  @import './styles/desktop';
+  @import './styles/desktop.scss';
 }

@@ -37,13 +37,13 @@ export default class Login extends Component {
           onSubmit={e => this.onSubmit(e)}>
           <input 
             type="email" 
-            className="input-email" 
+            className="input input-email" 
             onChange={e => this.onChange(e)}
             value={this.state.userEmail}
             placeholder="Email address"/>
           <input 
             type="password" 
-            className="input-password" 
+            className="input input-password" 
             onChange={e => this.onChange(e)}
             value={this.state.userPassword}
             placeholder="Password"/>
