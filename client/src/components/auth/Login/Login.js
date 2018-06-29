@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './Login.css';
 
 import Input from '../Input/Input';
@@ -25,9 +26,11 @@ export default class Login extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    
-    console.log('Email: ', this.state.userEmail)
-    console.log('Password: ', this.state.userPassword)
+
+    const user = {
+      email: this.state.userEmail,
+      password: this.state.userPassword
+    }
   }
 
   render() {
