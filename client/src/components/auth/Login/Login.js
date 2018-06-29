@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Login.css';
 
+import Input from '../Input/Input';
+
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,7 @@ export default class Login extends Component {
     }
   }
 
-  onChange(e) {
+  handleOnChange(e) {
     if (e.target.type === 'email') {
       this.setState({ userEmail: e.target.value });
     }
@@ -31,22 +33,23 @@ export default class Login extends Component {
   render() {
     return (
       <section className="login-container">
+        <h1 className="header-title">Social Media App</h1>
         <form 
           action="POST" 
           className="login-form" 
           onSubmit={e => this.onSubmit(e)}>
-          <input 
-            type="email" 
-            className="input input-email" 
-            onChange={e => this.onChange(e)}
-            value={this.state.userEmail}
-            placeholder="Email address"/>
-          <input 
-            type="password" 
-            className="input input-password" 
-            onChange={e => this.onChange(e)}
-            value={this.state.userPassword}
-            placeholder="Password"/>
+
+          <Input
+            type='email'
+            class='input input-email'
+            placeholder='Email address'
+            onChange={e => this.handleOnChange(e)} />
+
+          <Input 
+            type='password' 
+            class='input input-password' 
+            placeholder='Password' 
+            onChange={e => this.handleOnChange(e)} />
 
           <button className="button-login" type="submit">Login</button>
           <p className="forgot-password">Forgot your password?</p>

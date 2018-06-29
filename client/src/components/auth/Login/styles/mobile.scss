@@ -5,7 +5,14 @@
   background: $bg-gray;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
+}
+
+.header-title {
+  color: $cloud;
+  padding-bottom: 120px;
+  font-size: 38px;
 }
 
 .login-form {
@@ -23,12 +30,6 @@
     font-size: 16px;
     padding: 10px;
     outline: none;
-
-    &:hover,
-    &:active,
-    &:focus {
-      border-color: $primay-green;
-    }
   }
 
   .button-login {
@@ -38,5 +39,6 @@
   .forgot-password {
     text-align: center;
     color: $cloud;
+    cursor: pointer;
   }
 }
