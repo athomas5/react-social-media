@@ -5,9 +5,6 @@ export default class Input extends Component {
     super(props);
 
     this.state = {
-      type: '',
-      class: '',
-      placeholder: '',
       value: ''
     };
   }
@@ -20,6 +17,7 @@ export default class Input extends Component {
   render() {
     return (
       <input
+        id={this.props.id}
         type={this.props.type}
         className={this.props.class}
         placeholder={this.props.placeholder}

@@ -15,11 +15,11 @@ export default class Login extends Component {
   }
 
   handleOnChange(e) {
-    if (e.target.type === 'email') {
+    if (e.target.id === 'email-input') {
       this.setState({ userEmail: e.target.value });
     }
-    
-    if (e.target.type === 'password') {
+
+    if (e.target.id === 'password-input') {
       this.setState({ userPassword: e.target.value });
     }
   }
@@ -43,18 +43,20 @@ export default class Login extends Component {
           onSubmit={e => this.onSubmit(e)}>
 
           <Input
-            type='email'
-            class='input input-email'
-            placeholder='Email address'
+            id="email-input"
+            type="email"
+            class="input input-email"
+            placeholder="Email address"
             onChange={e => this.handleOnChange(e)} />
 
-          <Input 
-            type='password' 
-            class='input input-password' 
-            placeholder='Password' 
+          <Input
+            id="password-input"
+            type="password"
+            class="input input-password"
+            placeholder="Password"
             onChange={e => this.handleOnChange(e)} />
 
-          <button className="button-login" type="submit">Login</button>
+          <button className="button-login-register" type="submit">Login</button>
           <p className="forgot-password">Forgot your password?</p>
         </form>
       </section>

@@ -42,7 +42,7 @@ body,
     font-size: 16px;
     padding: 10px;
     outline: none; }
-  .login-form .button-login {
+  .login-form .button-login-register {
     width: 100%;
     margin-bottom: 15px;
     padding: 10px;
@@ -52,7 +52,7 @@ body,
     color: #ecf0f1;
     font-size: 16px;
     cursor: pointer; }
-    .login-form .button-login:hover, .login-form .button-login:active, .login-form .button-login:focus {
+    .login-form .button-login-register:hover, .login-form .button-login-register:active, .login-form .button-login-register:focus {
       background-color: #5FB68C; }
   .login-form .forgot-password {
     text-align: center;
