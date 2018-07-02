@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
   font-family: 'Lato';
   font-weight: 300; }
 
@@ -16,8 +17,17 @@ body,
 .navbar-container {
   width: 100%;
   padding: 20px;
-  background: lightcoral;
+  background: #2A363F;
+  border-bottom: 2px solid #5B666B;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center; }
+  justify-content: flex-end; }
+  .navbar-container .nav-link {
+    color: #ecf0f1;
+    font-size: 19px;
+    padding: 8px 0;
+    border-bottom: 1px solid transparent;
+    transition: .2s border; }
+    .navbar-container .nav-link:hover {
+      border-color: #ecf0f1; }
+  .navbar-container .nav-link-register {
+    margin-left: 15px; }
