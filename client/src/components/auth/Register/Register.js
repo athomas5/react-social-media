@@ -9,6 +9,7 @@ export default class Register extends Component {
     super(props);
 
     this.state = {
+      userName: '',
       userEmail: '',
       userPassword: '',
       userPassword2: ''
@@ -16,6 +17,10 @@ export default class Register extends Component {
   }
 
   handleOnChange(e) {
+    if (e.target.id === 'name-input') {
+      this.setState({ userEmail: e.target.value });
+    }
+
     if (e.target.id === 'email-input') {
       this.setState({ userEmail: e.target.value });
     }
@@ -33,6 +38,7 @@ export default class Register extends Component {
     e.preventDefault();
 
     const user = {
+      name: this.state.userName,
       email: this.state.userEmail,
       password: this.state.userPassword,
       password2: this.state.userPassword2
@@ -47,6 +53,13 @@ export default class Register extends Component {
           action="POST"
           className="login-form"
           onSubmit={e => this.onSubmit(e)}>
+
+          <Input
+            id="name-input"
+            type="text"
+            class="input input-name"
+            placeholder="Full Name"
+            onChange={e => this.handleOnChange(e)} />
 
           <Input
             id="email-input"

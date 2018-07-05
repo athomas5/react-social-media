@@ -14,35 +14,27 @@ body,
   width: 100%;
   height: 100%; }
 
+.component-container {
+  padding: 20px; }
+
 .login-container {
   width: 100%;
   height: 100%;
   padding: 20px;
-  background: #2A363F;
+  background: #272d39;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center; }
 
 .header-title {
-  color: #ecf0f1;
+  color: #e1e5e8;
   padding-bottom: 120px;
   font-size: 38px; }
 
 .login-form {
   max-width: 600px;
   width: 80%; }
-  .login-form .input {
-    width: 100%;
-    display: block;
-    margin-bottom: 30px;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #5B666B;
-    color: #ecf0f1;
-    font-size: 16px;
-    padding: 10px;
-    outline: none; }
   .login-form .button-login-register {
     width: 100%;
     margin-bottom: 15px;
@@ -50,12 +42,12 @@ body,
     border-radius: 3px;
     background-color: #6ED9A0;
     border: none;
-    color: #ecf0f1;
+    color: #e1e5e8;
     font-size: 16px;
     cursor: pointer; }
     .login-form .button-login-register:hover, .login-form .button-login-register:active, .login-form .button-login-register:focus {
       background-color: #5FB68C; }
   .login-form .forgot-password {
     text-align: center;
-    color: #ecf0f1;
+    color: #e1e5e8;
     cursor: pointer; }

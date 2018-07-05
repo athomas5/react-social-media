@@ -1,5 +1,29 @@
-// Fonts
+// ----- Fonts ----- //
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+// ----- Variables ----- //
+
+// Viewports
+$viewport-tablet: 767px;
+$viewport-desktop: 1140px;
+
+// Container styles
+$container-padding: 20px;
+// Colors
+
+$bg-gray: #2A363F;
+$primay-green: #6ED9A0;
+$secondary-green: #5FB68C;
+$font-gray: #5B666B;
+
+$font-cloud: #e1e5e8;
+$font-dark: #a6b0b9;
+$light-blue: #0f70f0;
+$bg-medium-blue: #272d39;
+$bg-dark-blue: #12131e;
+$bg-light: #f0f2f4;
+
+// ----- Global Styles ----- //
 
 * {
   margin: 0;
@@ -18,16 +42,6 @@ body,
   height: 100%;
 }
 
-// Viewports
-$viewport-tablet: 767px;
-$viewport-desktop: 1140px;
-
-// Container styles
-$container-padding: 20px;
-
-// Colors
-$bg-gray: #2A363F;
-$primay-green: #6ED9A0;
-$secondary-green: #5FB68C;
-$cloud: #ecf0f1;
-$font-gray: #5B666B;
+.component-container {
+  padding: $container-padding;
+}

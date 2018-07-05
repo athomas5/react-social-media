@@ -1,20 +1,18 @@
 .navbar-container {
   width: 100%;
-  padding: $container-padding;
-  background: $bg-gray;
-  border-bottom: 2px solid $font-gray;
+  background: $bg-dark-blue;
   display: flex;
   justify-content: flex-end;
 
   .nav-link {
-    color: $cloud;
-    font-size: 19px;
-    padding: 8px 0;
+    color: $font-cloud;
+    font-size: 16px;
+    padding: 6px 0;
     border-bottom: 1px solid transparent;
     transition: .2s border;
 
     &:hover {
-      border-color: $cloud;
+      border-color: $font-cloud;
     }
 
   }

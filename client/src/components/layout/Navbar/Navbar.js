@@ -6,7 +6,7 @@ import './Navbar.css';
 export default class Navbar extends Component {
   render() {
     return (
-      <section className="navbar-container">
+      <section className="component-container navbar-container">
         <Link to='/login' className='nav-link nav-link-login'>Login</Link>
         <Link to='/register' className='nav-link nav-link-register'>Register</Link>
       </section>

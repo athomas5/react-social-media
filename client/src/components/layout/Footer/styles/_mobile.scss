@@ -1,11 +1,9 @@
 .footer-container {
   width: 100%;
-  padding: $container-padding;
-  background: $bg-gray;
-  border-top: 2px solid $font-gray;
+  background: $bg-dark-blue;
 
   .copyright {
-    color: $cloud;
+    color: $font-cloud;
     font-size: 12px
   }
 }

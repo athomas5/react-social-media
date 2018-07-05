@@ -1,12 +1,20 @@
 .input {
   width: 100%;
-  display: block;
   margin-bottom: 30px;
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid $font-gray;
-  color: $cloud;
+  border-bottom: 2px solid $font-dark;
+  color: $font-cloud;
   font-size: 16px;
   padding: 10px;
   outline: none;
+
+  &::placeholder {
+    color: $font-dark;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder { color: $font-dark; }
+
+  &::-ms-input-placeholder { color: $font-dark; }
 }
