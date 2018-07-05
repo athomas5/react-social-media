@@ -4,12 +4,10 @@ import './Footer.css';
 
 export default class Footer extends Component {
   render() {
-    const date = new Date();
-    
     return (
-      <section className="footer-container">
-        <p class="copyright">&copy; Copyright {date.getUTCFullYear()}</p>
-      </section>
+      <footer className="footer-container">
+        <p className="copyright">&copy; Copyright {new Date().getFullYear()}</p>
+      </footer>
     )
   }
 }

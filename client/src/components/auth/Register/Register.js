@@ -5,8 +5,8 @@ import './Register.css';
 import Input from '../Input/Input';
 
 export default class Register extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       userEmail: '',
@@ -37,6 +37,10 @@ export default class Register extends Component {
       password: this.state.userPassword,
       password2: this.state.userPassword2
     }
+
+    axios.post('/api/users/register', user)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -66,7 +70,7 @@ export default class Register extends Component {
             id="password2-input"
             type="password"
             class="input input-password"
-            placeholder="Password Confirmation"
+            placeholder="Confirm Password"
             onChange={e => this.handleOnChange(e)} />
 
           <button className="button-login-register" type="submit">Register</button>
