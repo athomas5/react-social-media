@@ -20,4 +20,15 @@ body,
 .landingpage-container {
   height: 80%;
   background: #272d39;
-  color: #e1e5e8; }
+  color: #e1e5e8;
+  display: flex;
+  justify-content: center; }
+  .landingpage-container .text-container {
+    max-width: 500px;
+    text-align: center;
+    margin-top: 80px; }
+  .landingpage-container .title {
+    font-size: 38px;
+    padding-bottom: 30px; }
+  .landingpage-container .description {
+    font-size: 19px; }

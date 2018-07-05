@@ -19,7 +19,6 @@ body,
 
 .input {
   width: 100%;
-  margin-bottom: 30px;
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #a6b0b9;
@@ -34,3 +33,5 @@ body,
     color: #a6b0b9; }
   .input::-ms-input-placeholder {
     color: #a6b0b9; }
+  .input.isInValid {
+    border-color: #e74c3c; }

@@ -12,13 +12,14 @@ export default class Register extends Component {
       userName: '',
       userEmail: '',
       userPassword: '',
-      userPassword2: ''
+      userPassword2: '',
+      errors: { name: '', email: '', password: '', password2: '' }
     }
   }
 
   handleOnChange(e) {
     if (e.target.id === 'name-input') {
-      this.setState({ userEmail: e.target.value });
+      this.setState({ userName: e.target.value });
     }
 
     if (e.target.id === 'email-input') {
@@ -46,7 +47,7 @@ export default class Register extends Component {
 
     axios.post('/api/users/register', user)
       .then(res => console.log(res.data))
-      .catch(err => console.log(err));
+      .catch(err => this.setState({ errors: err.response.data }));
   }
 
   render() {
@@ -58,33 +59,53 @@ export default class Register extends Component {
           className="login-form"
           onSubmit={e => this.onSubmit(e)}>
 
-          <Input
-            id="name-input"
-            type="text"
-            class="input input-name"
-            placeholder="Full Name"
-            onChange={e => this.handleOnChange(e)} />
+          <div className="input-container">
+            <Input
+              id="name-input"
+              type="text"
+              class="input input-name"
+              placeholder="Full Name"
+              isInValid={this.state.errors.name !== undefined && this.state.errors.name !== ''}
+              onChange={e => this.handleOnChange(e)} />
+              
+            {this.state.errors.name && <p className="error-msg">{this.state.errors.name}</p>}
+          </div>
 
-          <Input
-            id="email-input"
-            type="email"
-            class="input input-email"
-            placeholder="Email address"
-            onChange={e => this.handleOnChange(e)} />
+          <div className="input-container">
+            <Input
+              id="email-input"
+              type="email"
+              class="input input-email"
+              placeholder="Email address"
+              isInValid={this.state.errors.email !== undefined && this.state.errors.email !== ''}
+              onChange={e => this.handleOnChange(e)} />
 
-          <Input
-            id="password-input"
-            type="password"
-            class="input input-password"
-            placeholder="Password"
-            onChange={e => this.handleOnChange(e)} />
+            {this.state.errors.email && <p className="error-msg">{this.state.errors.email}</p>}
+          </div>
 
-          <Input
-            id="password2-input"
-            type="password"
-            class="input input-password"
-            placeholder="Confirm Password"
-            onChange={e => this.handleOnChange(e)} />
+          <div className="input-container">
+            <Input
+              id="password-input"
+              type="password"
+              class="input input-password"
+              placeholder="Password"
+              isInValid={this.state.errors.password !== undefined && this.state.errors.password !== ''}
+              onChange={e => this.handleOnChange(e)} />
+
+            {this.state.errors.password && <p className="error-msg">{this.state.errors.password}</p>}
+          </div>
+
+          <div className="input-container">
+            <Input
+              id="password2-input"
+              type="password"
+              class="input input-password"
+              placeholder="Confirm Password"
+              isInValid={this.state.errors.password2 !== undefined && this.state.errors.password2 !== ''}
+              onChange={e => this.handleOnChange(e)} />
+
+            {this.state.errors.password2 && <p className="error-msg">{this.state.errors.password2}</p>}
+          </div>
 
           <button className="button-login-register" type="submit">Register</button>
         </form>

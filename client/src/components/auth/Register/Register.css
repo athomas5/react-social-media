@@ -29,12 +29,18 @@ body,
 
 .header-title {
   color: #e1e5e8;
-  padding-bottom: 120px;
+  padding-bottom: 40px;
   font-size: 38px; }
 
 .login-form {
   max-width: 600px;
   width: 80%; }
+  .login-form .input-container {
+    margin-bottom: 30px; }
+    .login-form .input-container .error-msg {
+      color: #e74c3c;
+      font-size: 13px;
+      margin-top: 10px; }
   .login-form .button-login-register {
     width: 100%;
     margin-bottom: 15px;

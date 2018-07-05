@@ -2,4 +2,21 @@
   height: 80%;
   background: $bg-medium-blue;
   color: $font-cloud;
+  display: flex;
+  justify-content: center;
+  
+  .text-container {
+    max-width: 500px;
+    text-align: center;
+    margin-top: 80px;
+  }
+  
+  .title {
+    font-size: 38px;
+    padding-bottom: 30px;
+  }
+
+  .description {
+    font-size: 19px;
+  }
 }

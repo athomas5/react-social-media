@@ -1,6 +1,5 @@
 .input {
   width: 100%;
-  margin-bottom: 30px;
   background-color: transparent;
   border: none;
   border-bottom: 2px solid $font-dark;
@@ -17,4 +16,8 @@
   &:-ms-input-placeholder { color: $font-dark; }
 
   &::-ms-input-placeholder { color: $font-dark; }
+
+  &.isInValid {
+    border-color: $error-red;
+  }
 }

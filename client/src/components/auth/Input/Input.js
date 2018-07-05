@@ -21,7 +21,7 @@ export default class Input extends Component {
       <input
         id={this.props.id}
         type={this.props.type}
-        className={this.props.class}
+        className={this.props.class + (this.props.isInValid ? ' isInValid' : '')}
         placeholder={this.props.placeholder}
         value={this.state.value}
         onChange={e => this.onChange(e)}
