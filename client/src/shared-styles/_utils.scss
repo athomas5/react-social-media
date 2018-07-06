@@ -16,3 +16,14 @@
     background-color: $color-secondary;
   }
 }
+
+
+@mixin chrome-autofill-styles($bg-color, $font-color) {
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px $bg-color inset;
+  }
+
+  &:-webkit-autofill {
+    -webkit-text-fill-color: $font-color !important;
+  }
+}

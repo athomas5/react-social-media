@@ -55,7 +55,7 @@ export default class Register extends Component {
         <h1 className="header-title">Social Media App</h1>
         <form
           action="POST"
-          className="login-form"
+          className="register-form"
           onSubmit={e => this.onSubmit(e)}>
 
           <div className="input-container">

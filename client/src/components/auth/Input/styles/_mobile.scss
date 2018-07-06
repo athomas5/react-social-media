@@ -8,6 +8,8 @@
   padding: 10px;
   outline: none;
 
+  @include chrome-autofill-styles($bg-medium-blue, $font-cloud);
+
   &::placeholder {
     color: $font-dark;
     opacity: 1;

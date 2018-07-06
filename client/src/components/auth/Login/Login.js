@@ -9,7 +9,8 @@ export default class Login extends Component {
 
     this.state = {
       userEmail: '',
-      userPassword: ''
+      userPassword: '',
+      errors: { name: '', email: '', password: '', password2: '' }
     }
   }
 
@@ -41,19 +42,29 @@ export default class Login extends Component {
           className="login-form" 
           onSubmit={e => this.onSubmit(e)}>
 
-          <Input
-            id="email-input"
-            type="email"
-            class="input input-email"
-            placeholder="Email address"
-            onChange={e => this.handleOnChange(e)} />
+          <div className="input-container">
+            <Input
+              id="email-input"
+              type="email"
+              class="input input-email"
+              placeholder="Email address"
+              isInValid={this.state.errors.name !== undefined && this.state.errors.name !== ''}
+              onChange={e => this.handleOnChange(e)} />
 
-          <Input
-            id="password-input"
-            type="password"
-            class="input input-password"
-            placeholder="Password"
-            onChange={e => this.handleOnChange(e)} />
+              {this.state.errors.name && <p className="error-msg">{this.state.errors.name}</p>}
+            </div>
+
+          <div className="input-container">
+            <Input
+              id="password-input"
+              type="password"
+              class="input input-password"
+              placeholder="Password"
+              isInValid={this.state.errors.name !== undefined && this.state.errors.name !== ''}
+              onChange={e => this.handleOnChange(e)} />
+
+              {this.state.errors.name && <p className="error-msg">{this.state.errors.name}</p>}
+          </div>
 
           <button className="button-login-register" type="submit">Login</button>
           <p className="forgot-password">Forgot your password?</p>
