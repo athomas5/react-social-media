@@ -1,0 +1,13 @@
+// ----- Shared Styles ----- //
+@import './shared-styles/styles.scss';
+@import './shared-styles/utils.scss';
+
+// ----- Layout ----- //`
+@import './components/layout/Footer/Footer.scss';
+@import './components/layout/LandingPage/LandingPage.scss';
+@import './components/layout/Navbar/Navbar.scss';
+
+// ----- Auth ----- //
+@import './components/auth/Input/Input.scss';
+@import './components/auth/Login/Login.scss';
+@import './components/auth/Register/Register.scss';
