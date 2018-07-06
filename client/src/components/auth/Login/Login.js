@@ -10,7 +10,7 @@ export default class Login extends Component {
     this.state = {
       userEmail: '',
       userPassword: '',
-      errors: { name: '', email: '', password: '', password2: '' }
+      errors: { email: '', password: '' }
     }
   }
 
@@ -31,6 +31,12 @@ export default class Login extends Component {
       email: this.state.userEmail,
       password: this.state.userPassword
     }
+
+    // TODO: Handle private login route
+
+    axios.post('/api/users/login', user)
+      .then(res => console.log(res.data))
+      .catch(err => this.setState({ errors: err.response.data }));
   }
 
   render() {
@@ -48,10 +54,10 @@ export default class Login extends Component {
               type="email"
               class="input input-email"
               placeholder="Email address"
-              isInValid={this.state.errors.name !== undefined && this.state.errors.name !== ''}
+              isInValid={this.state.errors.name !== undefined && this.state.errors.email !== ''}
               onChange={e => this.handleOnChange(e)} />
 
-              {this.state.errors.name && <p className="error-msg">{this.state.errors.name}</p>}
+              {this.state.errors.email && <p className="error-msg">{this.state.errors.email}</p>}
             </div>
 
           <div className="input-container">
@@ -60,10 +66,10 @@ export default class Login extends Component {
               type="password"
               class="input input-password"
               placeholder="Password"
-              isInValid={this.state.errors.name !== undefined && this.state.errors.name !== ''}
+              isInValid={this.state.errors.name !== undefined && this.state.errors.password !== ''}
               onChange={e => this.handleOnChange(e)} />
 
-              {this.state.errors.name && <p className="error-msg">{this.state.errors.name}</p>}
+              {this.state.errors.password && <p className="error-msg">{this.state.errors.password}</p>}
           </div>
 
           <button className="button-login-register" type="submit">Login</button>
