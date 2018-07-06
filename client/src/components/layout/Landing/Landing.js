@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-export default class LandingPage extends Component {
+export default class Landing extends Component {
   render() {
     return (
-      <section className="component-container landingpage-container">
+      <section className="component-container landing-container">
         <div className="text-container">
           <h1 className="title">Social Media App</h1>
           <p className="description">

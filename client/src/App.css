@@ -24,36 +24,36 @@ body,
     color: #e1e5e8;
     font-size: 12px; }
 
-.landingpage-container {
+.landing-container {
   height: 80%;
   background: #272d39;
   color: #e1e5e8;
   display: flex;
   justify-content: center; }
-  .landingpage-container .text-container {
+  .landing-container .text-container {
     max-width: 500px;
     text-align: center;
     margin-top: 80px; }
-  .landingpage-container .title {
+  .landing-container .title {
     font-size: 38px;
     padding-bottom: 30px; }
-  .landingpage-container .description {
+  .landing-container .description {
     font-size: 19px; }
 
-.navbar-container {
+.header-container {
   width: 100%;
   background: #12131e;
   display: flex;
   justify-content: flex-end; }
-  .navbar-container .nav-link {
+  .header-container .nav-link {
     color: #e1e5e8;
     font-size: 16px;
     padding: 6px 0;
     border-bottom: 1px solid transparent;
     transition: .2s border; }
-    .navbar-container .nav-link:hover {
+    .header-container .nav-link:hover {
       border-color: #e1e5e8; }
-  .navbar-container .nav-link-register {
+  .header-container .nav-link-register {
     margin-left: 15px; }
 
 .input {
