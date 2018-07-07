@@ -52,7 +52,7 @@ export default class Register extends Component {
   render() {
     return (
       <section className="register-container">
-        <h1 className="header-title">Social Media App</h1>
+        <h1 className="header-title">Register</h1>
         <form
           action="POST"
           className="register-form"

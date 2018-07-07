@@ -32,8 +32,6 @@ export default class Login extends Component {
       password: this.state.userPassword
     }
 
-    // TODO: Handle private login route
-
     axios.post('/api/users/login', user)
       .then(res => console.log(res.data))
       .catch(err => this.setState({ errors: err.response.data }));
@@ -42,7 +40,7 @@ export default class Login extends Component {
   render() {
     return (
       <section className="login-container">
-        <h1 className="header-title">Social Media App</h1>
+        <h1 className="header-title">Login</h1>
         <form 
           action="POST" 
           className="login-form" 
