@@ -14,6 +14,16 @@ class Login extends Component {
       userEmail: '',
       userPassword: '',
       errors: { email: '', password: '' }
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.auth.isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
+
+    if (prevProps.errors !== this.props.errors) {
+      this.setState({ errors: this.props.errors });
     }
   }
 
@@ -40,42 +50,56 @@ class Login extends Component {
 
   render() {
     return (
-      <section className="login-container">
-        <h1 className="header-title">Login</h1>
-        <form 
-          action="POST" 
-          className="login-form" 
-          onSubmit={e => this.onSubmit(e)}>
-
-          <div className="input-container">
+      <section className='login-container'>
+        <h1 className='header-title'>Login</h1>
+        <form
+          action='POST'
+          className='login-form'
+          onSubmit={e => this.onSubmit(e)}
+        >
+          <div className='input-container'>
             <Input
-              id="email-input"
-              type="email"
-              class="input input-email"
-              placeholder="Email address"
-              isInValid={this.state.errors.name !== undefined && this.state.errors.email !== ''}
-              onChange={e => this.handleOnChange(e)} />
+              id='email-input'
+              type='email'
+              class='input input-email'
+              placeholder='Email address'
+              isInValid={
+                this.state.errors.name !== undefined &&
+                this.state.errors.email !== ''
+              }
+              onChange={e => this.handleOnChange(e)}
+            />
 
-              {this.state.errors.email && <p className="error-msg">{this.state.errors.email}</p>}
-            </div>
-
-          <div className="input-container">
-            <Input
-              id="password-input"
-              type="password"
-              class="input input-password"
-              placeholder="Password"
-              isInValid={this.state.errors.name !== undefined && this.state.errors.password !== ''}
-              onChange={e => this.handleOnChange(e)} />
-
-              {this.state.errors.password && <p className="error-msg">{this.state.errors.password}</p>}
+            {this.state.errors.email && (
+              <p className='error-msg'>{this.state.errors.email}</p>
+            )}
           </div>
 
-          <button className="button-login-register" type="submit">Login</button>
-          <p className="forgot-password">Forgot your password?</p>
+          <div className='input-container'>
+            <Input
+              id='password-input'
+              type='password'
+              class='input input-password'
+              placeholder='Password'
+              isInValid={
+                this.state.errors.name !== undefined &&
+                this.state.errors.password !== ''
+              }
+              onChange={e => this.handleOnChange(e)}
+            />
+
+            {this.state.errors.password && (
+              <p className='error-msg'>{this.state.errors.password}</p>
+            )}
+          </div>
+
+          <button className='button-login-register' type='submit'>
+            Login
+          </button>
+          <p className='forgot-password'>Forgot your password?</p>
         </form>
       </section>
-    )
+    );
   }
 }
 
