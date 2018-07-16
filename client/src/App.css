@@ -9,8 +9,7 @@
 
 html,
 body,
-#root,
-.App {
+#root {
   width: 100%;
   height: 100%; }
 
@@ -53,8 +52,13 @@ body,
     transition: .2s border; }
     .header-container .nav-link:hover {
       border-color: #e1e5e8; }
-  .header-container .nav-link-register {
-    margin-left: 15px; }
+    .header-container .nav-link.nav-link-register {
+      margin-left: 15px; }
+  .header-container .profile-image {
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    margin: 5px 10px 6px 0; }
 
 .input {
   width: 100%;

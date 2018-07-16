@@ -15,9 +15,15 @@
       border-color: $font-cloud;
     }
 
+    &.nav-link-register {
+      margin-left: 15px;
+    }
   }
 
-  .nav-link-register {
-    margin-left: 15px;
+  .profile-image {
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    margin: 5px 10px 6px 0;
   }
 }
