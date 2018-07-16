@@ -34,6 +34,7 @@ class Login extends Component {
   }
 
   handleOnChange(e) {
+    console.log(this.state.userEmail)
     if (e.target.id === 'email-input') {
       this.setState({ userEmail: e.target.value });
     }
@@ -69,10 +70,8 @@ class Login extends Component {
               type='email'
               class='input input-email'
               placeholder='Email address'
-              isInValid={
-                this.state.errors.name !== undefined &&
-                this.state.errors.email !== ''
-              }
+              value={this.state.userEmail}
+              isInValid={ this.state.errors.name !== undefined && this.state.errors.email !== ''}
               onChange={e => this.handleOnChange(e)}
             />
 
@@ -87,10 +86,8 @@ class Login extends Component {
               type='password'
               class='input input-password'
               placeholder='Password'
-              isInValid={
-                this.state.errors.name !== undefined &&
-                this.state.errors.password !== ''
-              }
+              value={this.state.userPassword}
+              isInValid={this.state.errors.name !== undefined && this.state.errors.password !== ''}
               onChange={e => this.handleOnChange(e)}
             />
 

@@ -77,6 +77,7 @@ class Register extends Component {
               type="text"
               class="input input-name"
               placeholder="Full Name"
+              value={this.state.userName}
               isInValid={
                 this.state.errors.name !== undefined &&
                 this.state.errors.name !== ""
@@ -95,6 +96,7 @@ class Register extends Component {
               type="email"
               class="input input-email"
               placeholder="Email address"
+              value={this.state.userEmail}
               isInValid={
                 this.state.errors.email !== undefined &&
                 this.state.errors.email !== ""
@@ -113,6 +115,7 @@ class Register extends Component {
               type="password"
               class="input input-password"
               placeholder="Password"
+              value={this.state.userPassword}
               isInValid={
                 this.state.errors.password !== undefined &&
                 this.state.errors.password !== ""
@@ -131,6 +134,7 @@ class Register extends Component {
               type="password"
               class="input input-password"
               placeholder="Confirm Password"
+              value={this.state.userPassword2}
               isInValid={
                 this.state.errors.password2 !== undefined &&
                 this.state.errors.password2 !== ""
