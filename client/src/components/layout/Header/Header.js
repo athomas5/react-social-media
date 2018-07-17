@@ -22,7 +22,7 @@ class Header extends Component {
           src={user.avatar} 
           alt="user-avatar" 
           title="Must have Gravatar connected to email" />
-        <a href="#" className="nav-link nav-link-logout" onClick={this.onLogoutUser}>Logout</a>
+        <a href="" className="nav-link nav-link-logout" onClick={this.onLogoutUser}>Logout</a>
       </section>
     );
 

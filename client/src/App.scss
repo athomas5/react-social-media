@@ -12,5 +12,8 @@
 @import './components/auth/Login/Login.scss';
 @import './components/auth/Register/Register.scss';
 
+// ----- Common ----- //
+@import './components/common/Spinner/Spinner.scss';
+
 // ----- Regular Component ----- //
-@import './components/dashboard/dashboard.scss';
+@import './components/dashboard/Dashboard.scss';
