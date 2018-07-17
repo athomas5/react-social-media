@@ -24,6 +24,7 @@ class Login extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    // TODO: Fix this bug --> Dashboard does not get loaded after login
     if (prevProps.auth.isAuthenticated) {
       this.props.history.push('/dashboard');
     }
@@ -34,11 +35,10 @@ class Login extends Component {
   }
 
   handleOnChange(e) {
-    console.log(this.state.userEmail)
     if (e.target.id === 'email-input') {
       this.setState({ userEmail: e.target.value });
     }
-
+    
     if (e.target.id === 'password-input') {
       this.setState({ userPassword: e.target.value });
     }

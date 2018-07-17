@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const Input = (props) => {
+const Input = props => {
   return (
     <input
       id={props.id}
