@@ -179,3 +179,23 @@ body,
   flex-direction: column;
   align-items: center;
   color: #e1e5e8; }
+  .dashboard-container .text-container {
+    max-width: 500px;
+    text-align: center;
+    margin-top: 80px; }
+  .dashboard-container .title {
+    font-size: 38px;
+    padding-bottom: 30px; }
+  .dashboard-container .welcome-message {
+    padding-bottom: 30px; }
+  .dashboard-container .description {
+    font-size: 19px;
+    padding-bottom: 15px; }
+  .dashboard-container .create-profile {
+    cursor: pointer;
+    text-align: center;
+    color: #e1e5e8;
+    padding-bottom: 6px;
+    border-bottom: 1px solid transparent; }
+    .dashboard-container .create-profile:hover {
+      border-color: #e1e5e8; }
