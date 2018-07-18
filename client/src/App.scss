@@ -8,12 +8,15 @@
 @import './components/layout/Header/Header.scss';
 
 // ----- Auth ----- //
-@import './components/auth/Input/Input.scss';
+// @import './components/auth/Input/Input.scss';
 @import './components/auth/Login/Login.scss';
 @import './components/auth/Register/Register.scss';
 
 // ----- Common ----- //
 @import './components/common/Spinner/Spinner.scss';
+@import './components/common/Input/Input.scss';
+
 
 // ----- Regular Component ----- //
-@import './components/dashboard/Dashboard.scss';
+@import './components/Dashboard/Dashboard.scss';
+@import './components/CreateProfile/CreateProfile.scss';

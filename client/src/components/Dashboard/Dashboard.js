@@ -14,7 +14,7 @@ class Dashboard extends Component {
 
     return (
       <div className="text-container">
-        <h2 className="welcome-message">Welcome {user.name}</h2>
+        <h2 className="welcome-message">Welcome <span className="user-name">{user.name}</span></h2>
         <p className="description">You haven't setup your profile yet</p>
         <Link to="/create-profile" className="create-profile">Create Profile</Link>
       </div>

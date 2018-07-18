@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loginUser } from '../../../actions/authActions';
 
-import Input from '../Input/Input';
+import Input from '../../common/Input/Input';
 
 class Login extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class Login extends Component {
     }
   }
 
-  handleOnChange(e) {
+  handleOnChange = e => {
     if (e.target.id === 'email-input') {
       this.setState({ userEmail: e.target.value });
     }
@@ -43,7 +43,7 @@ class Login extends Component {
     }
   }
 
-  onSubmit(e) {
+  onSubmit = e => {
     e.preventDefault();
 
     const user = {
@@ -61,7 +61,7 @@ class Login extends Component {
         <form
           action='POST'
           className='login-form'
-          onSubmit={e => this.onSubmit(e)}
+          onSubmit={this.onSubmit}
         >
           <div className='input-container'>
             <Input
@@ -70,8 +70,8 @@ class Login extends Component {
               class='input input-email'
               placeholder='Email address'
               value={this.state.userEmail}
-              isInValid={ this.state.errors.name !== undefined && this.state.errors.email !== ''}
-              onChange={e => this.handleOnChange(e)}
+              isInValid={ this.state.errors.email !== undefined && this.state.errors.email !== ''}
+              onChange={this.handleOnChange}
             />
 
             {this.state.errors.email && (
@@ -86,8 +86,8 @@ class Login extends Component {
               class='input input-password'
               placeholder='Password'
               value={this.state.userPassword}
-              isInValid={this.state.errors.name !== undefined && this.state.errors.password !== ''}
-              onChange={e => this.handleOnChange(e)}
+              isInValid={this.state.errors.password !== undefined && this.state.errors.password !== ''}
+              onChange={this.handleOnChange}
             />
 
             {this.state.errors.password && (

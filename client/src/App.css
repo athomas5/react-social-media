@@ -60,29 +60,6 @@ body,
     border-radius: 50px;
     margin: 5px 10px 6px 0; }
 
-.input {
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid #a6b0b9;
-  color: #e1e5e8;
-  font-size: 16px;
-  padding: 10px;
-  outline: none; }
-  .input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #272d39 inset; }
-  .input:-webkit-autofill {
-    -webkit-text-fill-color: #e1e5e8 !important; }
-  .input::placeholder {
-    color: #a6b0b9;
-    opacity: 1; }
-  .input:-ms-input-placeholder {
-    color: #a6b0b9; }
-  .input::-ms-input-placeholder {
-    color: #a6b0b9; }
-  .input.isInValid {
-    border-color: #e74c3c; }
-
 .login-container {
   width: 100%;
   height: 100%;
@@ -170,8 +147,61 @@ body,
   margin: auto;
   display: block; }
 
+.input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #a6b0b9;
+  color: #e1e5e8;
+  font-size: 16px;
+  padding: 10px;
+  outline: none; }
+  .input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #272d39 inset; }
+  .input:-webkit-autofill {
+    -webkit-text-fill-color: #e1e5e8 !important; }
+  .input::placeholder {
+    color: #a6b0b9;
+    opacity: 1; }
+  .input:-ms-input-placeholder {
+    color: #a6b0b9; }
+  .input::-ms-input-placeholder {
+    color: #a6b0b9; }
+  .input.isInValid {
+    border-color: #e74c3c; }
+
 .dashboard-container {
   width: 100%;
+  padding: 20px;
+  background: #272d39;
+  color: #e1e5e8; }
+  .dashboard-container .text-container {
+    margin-left: 50px; }
+  .dashboard-container .title {
+    font-size: 38px;
+    padding-bottom: 20px; }
+  .dashboard-container .welcome-message {
+    padding-bottom: 10px; }
+  .dashboard-container .description {
+    font-size: 19px;
+    padding-bottom: 15px;
+    margin-bottom: 30px; }
+  .dashboard-container .create-profile {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #6ED9A0;
+    border: none;
+    color: #e1e5e8;
+    font-size: 16px;
+    cursor: pointer; }
+    .dashboard-container .create-profile:hover, .dashboard-container .create-profile:active, .dashboard-container .create-profile:focus {
+      background-color: #5FB68C; }
+
+.create-profile-container {
+  width: 100%;
+  height: 100%;
   padding: 20px;
   background: #272d39;
   display: flex;
@@ -179,23 +209,29 @@ body,
   flex-direction: column;
   align-items: center;
   color: #e1e5e8; }
-  .dashboard-container .text-container {
-    max-width: 500px;
-    text-align: center;
-    margin-top: 80px; }
-  .dashboard-container .title {
-    font-size: 38px;
-    padding-bottom: 30px; }
-  .dashboard-container .welcome-message {
-    padding-bottom: 30px; }
-  .dashboard-container .description {
-    font-size: 19px;
-    padding-bottom: 15px; }
-  .dashboard-container .create-profile {
-    cursor: pointer;
-    text-align: center;
+  .create-profile-container .header-title {
     color: #e1e5e8;
-    padding-bottom: 6px;
-    border-bottom: 1px solid transparent; }
-    .dashboard-container .create-profile:hover {
-      border-color: #e1e5e8; }
+    font-size: 38px; }
+  .create-profile-container .kicker {
+    padding-bottom: 20px; }
+  .create-profile-container .create-profile-form {
+    max-width: 600px;
+    width: 80%; }
+    .create-profile-container .create-profile-form .create-profile-container {
+      margin-bottom: 30px; }
+      .create-profile-container .create-profile-form .create-profile-container .error-msg {
+        color: #e74c3c;
+        font-size: 13px;
+        margin-top: 10px; }
+    .create-profile-container .create-profile-form .button-create-profile {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 3px;
+      background-color: #6ED9A0;
+      border: none;
+      color: #e1e5e8;
+      font-size: 16px;
+      cursor: pointer; }
+      .create-profile-container .create-profile-form .button-create-profile:hover, .create-profile-container .create-profile-form .button-create-profile:active, .create-profile-container .create-profile-form .button-create-profile:focus {
+        background-color: #5FB68C; }
