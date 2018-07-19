@@ -45,31 +45,28 @@ class CreateProfile extends Component{
         <form
           action='POST'
           className='create-profile-form'
-          onSubmit={this.onSubmit}
-        >
-          <div className='input-container'>
-            <Input
-              id='handle-input'
-              type='text'
-              class='input input-handle'
-              placeholder='* Profile handle'
-              value={this.state.handle}
-              isInValid={this.state.errors.handle !== undefined && this.state.errors.handle !== ''}
-              onChange={this.handleOnChange}
-            />
-          </div>
+          onSubmit={this.onSubmit} >
+          <Input
+            id='handle-input'
+            type='text'
+            class='input input-handle'
+            placeholder='* Profile handle'
+            value={this.state.handle}
+            error={this.state.errors.handle}
+            isInValid={this.state.errors.handle !== undefined && this.state.errors.handle !== ''}
+            onChange={this.handleOnChange}
+          />
 
-          <div className='input-container'>
-            <Input
-              id='company-input'
-              type='text'
-              class='input input-company'
-              placeholder='Company'
-              value={this.state.company}
-              isInValid={this.state.errors.company !== undefined && this.state.errors.company !== ''}
-              onChange={e => this.handleOnChange(e)}
-            />
-          </div>
+          <Input
+            id='company-input'
+            type='text'
+            class='input input-company'
+            placeholder='Company'
+            value={this.state.company}
+            error={this.state.errors.company}
+            onChange={e => this.handleOnChange(e)}
+            isInValid={this.state.errors.company !== undefined && this.state.errors.company !== ''}
+          />
         </form>
       </section>
     )

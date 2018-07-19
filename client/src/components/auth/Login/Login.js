@@ -61,43 +61,30 @@ class Login extends Component {
         <form
           action='POST'
           className='login-form'
-          onSubmit={this.onSubmit}
-        >
-          <div className='input-container'>
-            <Input
-              id='email-input'
-              type='email'
-              class='input input-email'
-              placeholder='Email address'
-              value={this.state.userEmail}
-              isInValid={ this.state.errors.email !== undefined && this.state.errors.email !== ''}
-              onChange={this.handleOnChange}
-            />
+          onSubmit={this.onSubmit} >
+          <Input
+            id='email-input'
+            type='email'
+            class='input input-email'
+            placeholder='Email address'
+            value={this.state.userEmail}
+            error={this.state.errors.email}
+            isInValid={this.state.errors.email !== undefined && this.state.errors.email !== ''}
+            onChange={this.handleOnChange}
+          />
 
-            {this.state.errors.email && (
-              <p className='error-msg'>{this.state.errors.email}</p>
-            )}
-          </div>
+          <Input
+            id='password-input'
+            type='password'
+            class='input input-password'
+            placeholder='Password'
+            value={this.state.userPassword}
+            error={this.state.errors.password}
+            isInValid={this.state.errors.password !== undefined && this.state.errors.password !== ''}
+            onChange={this.handleOnChange}
+          />
 
-          <div className='input-container'>
-            <Input
-              id='password-input'
-              type='password'
-              class='input input-password'
-              placeholder='Password'
-              value={this.state.userPassword}
-              isInValid={this.state.errors.password !== undefined && this.state.errors.password !== ''}
-              onChange={this.handleOnChange}
-            />
-
-            {this.state.errors.password && (
-              <p className='error-msg'>{this.state.errors.password}</p>
-            )}
-          </div>
-
-          <button className='button-login-register' type='submit'>
-            Login
-          </button>
+          <button className='button-login-register' type='submit'>Login</button>
           <p className='forgot-password'>Forgot your password?</p>
         </form>
       </section>

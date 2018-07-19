@@ -78,12 +78,6 @@ body,
 .login-form {
   max-width: 600px;
   width: 80%; }
-  .login-form .input-container {
-    margin-bottom: 30px; }
-    .login-form .input-container .error-msg {
-      color: #e74c3c;
-      font-size: 13px;
-      margin-top: 10px; }
   .login-form .button-login-register {
     width: 100%;
     margin-bottom: 15px;
@@ -147,28 +141,34 @@ body,
   margin: auto;
   display: block; }
 
-.input {
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid #a6b0b9;
-  color: #e1e5e8;
-  font-size: 16px;
-  padding: 10px;
-  outline: none; }
-  .input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #272d39 inset; }
-  .input:-webkit-autofill {
-    -webkit-text-fill-color: #e1e5e8 !important; }
-  .input::placeholder {
-    color: #a6b0b9;
-    opacity: 1; }
-  .input:-ms-input-placeholder {
-    color: #a6b0b9; }
-  .input::-ms-input-placeholder {
-    color: #a6b0b9; }
-  .input.isInValid {
-    border-color: #e74c3c; }
+.input-container {
+  margin-bottom: 30px; }
+  .input-container .input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #a6b0b9;
+    color: #e1e5e8;
+    font-size: 16px;
+    padding: 10px;
+    outline: none; }
+    .input-container .input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px #272d39 inset; }
+    .input-container .input:-webkit-autofill {
+      -webkit-text-fill-color: #e1e5e8 !important; }
+    .input-container .input::placeholder {
+      color: #a6b0b9;
+      opacity: 1; }
+    .input-container .input:-ms-input-placeholder {
+      color: #a6b0b9; }
+    .input-container .input::-ms-input-placeholder {
+      color: #a6b0b9; }
+    .input-container .input.isInValid {
+      border-color: #e74c3c; }
+  .input-container .error-msg {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 10px; }
 
 .dashboard-container {
   width: 100%;

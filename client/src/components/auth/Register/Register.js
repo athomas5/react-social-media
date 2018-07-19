@@ -71,85 +71,51 @@ class Register extends Component {
           className="register-form"
           onSubmit={e => this.onSubmit(e)}
         >
-          <div className="input-container">
-            <Input
-              id="name-input"
-              type="text"
-              class="input input-name"
-              placeholder="Full Name"
-              value={this.state.userName}
-              isInValid={
-                this.state.errors.name !== undefined &&
-                this.state.errors.name !== ""
-              }
-              onChange={e => this.handleOnChange(e)}
-            />
+          <Input
+            id="name-input"
+            type="text"
+            class="input input-name"
+            placeholder="Full Name"
+            value={this.state.userName}
+            error={this.state.errors.name}
+            isInValid={this.state.errors.name !== undefined && this.state.errors.name !== ""}
+            onChange={e => this.handleOnChange(e)}
+          />
 
-            {this.state.errors.name && (
-              <p className="error-msg">{this.state.errors.name}</p>
-            )}
-          </div>
+          <Input
+            id="email-input"
+            type="email"
+            class="input input-email"
+            placeholder="Email address"
+            value={this.state.userEmail}
+            error={this.state.errors.email}
+            isInValid={this.state.errors.email !== undefined && this.state.errors.email !== ""}
+            onChange={e => this.handleOnChange(e)}
+          />
 
-          <div className="input-container">
-            <Input
-              id="email-input"
-              type="email"
-              class="input input-email"
-              placeholder="Email address"
-              value={this.state.userEmail}
-              isInValid={
-                this.state.errors.email !== undefined &&
-                this.state.errors.email !== ""
-              }
-              onChange={e => this.handleOnChange(e)}
-            />
+          <Input
+            id="password-input"
+            type="password"
+            class="input input-password"
+            placeholder="Password"
+            value={this.state.userPassword}
+            error={this.state.errors.password}
+            isInValid={this.state.errors.password !== undefined && this.state.errors.password !== ""}
+            onChange={e => this.handleOnChange(e)}
+          />
 
-            {this.state.errors.email && (
-              <p className="error-msg">{this.state.errors.email}</p>
-            )}
-          </div>
+          <Input
+            id="password2-input"
+            type="password"
+            class="input input-password"
+            placeholder="Confirm Password"
+            value={this.state.userPassword2}
+            error={this.state.errors.password2}
+            isInValid={this.state.errors.password2 !== undefined && this.state.errors.password2 !== ""}
+            onChange={e => this.handleOnChange(e)}
+          />
 
-          <div className="input-container">
-            <Input
-              id="password-input"
-              type="password"
-              class="input input-password"
-              placeholder="Password"
-              value={this.state.userPassword}
-              isInValid={
-                this.state.errors.password !== undefined &&
-                this.state.errors.password !== ""
-              }
-              onChange={e => this.handleOnChange(e)}
-            />
-
-            {this.state.errors.password && (
-              <p className="error-msg">{this.state.errors.password}</p>
-            )}
-          </div>
-
-          <div className="input-container">
-            <Input
-              id="password2-input"
-              type="password"
-              class="input input-password"
-              placeholder="Confirm Password"
-              value={this.state.userPassword2}
-              isInValid={
-                this.state.errors.password2 !== undefined &&
-                this.state.errors.password2 !== ""
-              }
-              onChange={e => this.handleOnChange(e)}
-            />
-
-            {this.state.errors.password2 && (
-              <p className="error-msg">{this.state.errors.password2}</p>
-            )}
-          </div>
-
-          <button className="button-login-register" type="submit">
-            Register
-          </button>
+          <button className="button-login-register" type="submit">Register</button>
         </form>
       </section>
     );

@@ -1,25 +1,38 @@
-.input {
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid $font-dark;
-  color: $font-cloud;
-  font-size: 16px;
-  padding: 10px;
-  outline: none;
+.input-container {
+  margin-bottom: 30px;
 
-  @include chrome-autofill-styles($bg-medium-blue, $font-cloud);
+  .input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid $font-dark;
+    color: $font-cloud;
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+    @include chrome-autofill-styles($bg-medium-blue, $font-cloud);
 
-  &::placeholder {
-    color: $font-dark;
-    opacity: 1;
+    &::placeholder {
+      color: $font-dark;
+      opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+      color: $font-dark;
+    }
+
+    &::-ms-input-placeholder {
+      color: $font-dark;
+    }
+    
+    &.isInValid {
+      border-color: $error-red;
+    }
   }
 
-  &:-ms-input-placeholder { color: $font-dark; }
-
-  &::-ms-input-placeholder { color: $font-dark; }
-
-  &.isInValid {
-    border-color: $error-red;
+  .error-msg {
+    color: $error-red;
+    font-size: 13px;
+    margin-top: 10px;
   }
 }
