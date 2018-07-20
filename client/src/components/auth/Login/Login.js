@@ -11,8 +11,8 @@ class Login extends Component {
     super(props);
 
     this.state = {
-      userEmail: '',
-      userPassword: '',
+      email: '',
+      password: '',
       errors: { email: '', password: '' }
     };
   }
@@ -35,11 +35,11 @@ class Login extends Component {
 
   handleOnChange = e => {
     if (e.target.id === 'email-input') {
-      this.setState({ userEmail: e.target.value });
+      this.setState({ email: e.target.value });
     }
     
     if (e.target.id === 'password-input') {
-      this.setState({ userPassword: e.target.value });
+      this.setState({ password: e.target.value });
     }
   }
 
@@ -47,8 +47,8 @@ class Login extends Component {
     e.preventDefault();
 
     const user = {
-      email: this.state.userEmail,
-      password: this.state.userPassword
+      email: this.state.email,
+      password: this.state.password
     }
 
     this.props.loginUser(user, this.props.history);
@@ -67,7 +67,7 @@ class Login extends Component {
             type='email'
             class='input input-email'
             placeholder='Email address'
-            value={this.state.userEmail}
+            value={this.state.email}
             error={this.state.errors.email}
             isInValid={this.state.errors.email !== undefined && this.state.errors.email !== ''}
             onChange={this.handleOnChange}
@@ -78,13 +78,13 @@ class Login extends Component {
             type='password'
             class='input input-password'
             placeholder='Password'
-            value={this.state.userPassword}
+            value={this.state.password}
             error={this.state.errors.password}
             isInValid={this.state.errors.password !== undefined && this.state.errors.password !== ''}
             onChange={this.handleOnChange}
           />
 
-          <button className='button-login-register' type='submit'>Login</button>
+          <button className='submit-button' type='submit'>Login</button>
           <p className='forgot-password'>Forgot your password?</p>
         </form>
       </section>

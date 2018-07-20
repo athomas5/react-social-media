@@ -7,35 +7,35 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-}
 
-.header-title {
-  color: $font-cloud;
-  padding-bottom: 40px;
-  font-size: 38px;
-}
-
-.register-form {
-  max-width: 600px;
-  width: 80%;
-
-  .input-container {
-    margin-bottom: 30px;
-
-    .error-msg {
-      color: $error-red;
-      font-size: 13px;
-      margin-top: 10px;
-    }
-  }
-
-  .button-login-register {
-    @include button($primay-green, $secondary-green);
-  }
-
-  .forgot-password {
-    text-align: center;
+  .header-title {
     color: $font-cloud;
-    cursor: pointer;
+    padding-bottom: 40px;
+    font-size: 38px;
+  }
+
+  .register-form {
+    max-width: 600px;
+    width: 80%;
+
+    .input-container {
+      margin-bottom: 30px;
+
+      .error-msg {
+        color: $error-red;
+        font-size: 13px;
+        margin-top: 10px;
+      }
+    }
+
+    .submit-button {
+      @include button($primay-green, $secondary-green);
+    }
+
+    .forgot-password {
+      text-align: center;
+      color: $font-cloud;
+      cursor: pointer;
+    }
   }
 }

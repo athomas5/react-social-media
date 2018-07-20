@@ -69,31 +69,29 @@ body,
   justify-content: center;
   flex-direction: column;
   align-items: center; }
-
-.header-title {
-  color: #e1e5e8;
-  padding-bottom: 120px;
-  font-size: 38px; }
-
-.login-form {
-  max-width: 600px;
-  width: 80%; }
-  .login-form .button-login-register {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 3px;
-    background-color: #6ED9A0;
-    border: none;
+  .login-container .header-title {
     color: #e1e5e8;
-    font-size: 16px;
-    cursor: pointer; }
-    .login-form .button-login-register:hover, .login-form .button-login-register:active, .login-form .button-login-register:focus {
-      background-color: #5FB68C; }
-  .login-form .forgot-password {
-    text-align: center;
-    color: #e1e5e8;
-    cursor: pointer; }
+    padding-bottom: 40px;
+    font-size: 38px; }
+  .login-container .login-form {
+    max-width: 600px;
+    width: 80%; }
+    .login-container .login-form .submit-button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 3px;
+      background-color: #6ED9A0;
+      border: none;
+      color: #e1e5e8;
+      font-size: 16px;
+      cursor: pointer; }
+      .login-container .login-form .submit-button:hover, .login-container .login-form .submit-button:active, .login-container .login-form .submit-button:focus {
+        background-color: #5FB68C; }
+    .login-container .login-form .forgot-password {
+      text-align: center;
+      color: #e1e5e8;
+      cursor: pointer; }
 
 .register-container {
   width: 100%;
@@ -104,37 +102,35 @@ body,
   justify-content: center;
   flex-direction: column;
   align-items: center; }
-
-.header-title {
-  color: #e1e5e8;
-  padding-bottom: 40px;
-  font-size: 38px; }
-
-.register-form {
-  max-width: 600px;
-  width: 80%; }
-  .register-form .input-container {
-    margin-bottom: 30px; }
-    .register-form .input-container .error-msg {
-      color: #e74c3c;
-      font-size: 13px;
-      margin-top: 10px; }
-  .register-form .button-login-register {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 3px;
-    background-color: #6ED9A0;
-    border: none;
+  .register-container .header-title {
     color: #e1e5e8;
-    font-size: 16px;
-    cursor: pointer; }
-    .register-form .button-login-register:hover, .register-form .button-login-register:active, .register-form .button-login-register:focus {
-      background-color: #5FB68C; }
-  .register-form .forgot-password {
-    text-align: center;
-    color: #e1e5e8;
-    cursor: pointer; }
+    padding-bottom: 40px;
+    font-size: 38px; }
+  .register-container .register-form {
+    max-width: 600px;
+    width: 80%; }
+    .register-container .register-form .input-container {
+      margin-bottom: 30px; }
+      .register-container .register-form .input-container .error-msg {
+        color: #e74c3c;
+        font-size: 13px;
+        margin-top: 10px; }
+    .register-container .register-form .submit-button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 3px;
+      background-color: #6ED9A0;
+      border: none;
+      color: #e1e5e8;
+      font-size: 16px;
+      cursor: pointer; }
+      .register-container .register-form .submit-button:hover, .register-container .register-form .submit-button:active, .register-container .register-form .submit-button:focus {
+        background-color: #5FB68C; }
+    .register-container .register-form .forgot-password {
+      text-align: center;
+      color: #e1e5e8;
+      cursor: pointer; }
 
 .spinner-container .spinner-gif {
   width: 50px;
@@ -166,6 +162,62 @@ body,
     .input-container .input.isInValid {
       border-color: #e74c3c; }
   .input-container .error-msg {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 10px; }
+
+.textarea-container {
+  margin-bottom: 30px; }
+  .textarea-container .textarea {
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid #a6b0b9;
+    color: #e1e5e8;
+    font-size: 16px;
+    padding: 10px;
+    outline: none; }
+    .textarea-container .textarea:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px #272d39 inset; }
+    .textarea-container .textarea:-webkit-autofill {
+      -webkit-text-fill-color: #e1e5e8 !important; }
+    .textarea-container .textarea::placeholder {
+      color: #a6b0b9;
+      opacity: 1; }
+    .textarea-container .textarea:-ms-textarea-placeholder {
+      color: #a6b0b9; }
+    .textarea-container .textarea::-ms-textarea-placeholder {
+      color: #a6b0b9; }
+    .textarea-container .textarea.isInValid {
+      border-color: #e74c3c; }
+  .textarea-container .error-msg {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 10px; }
+
+.select-container {
+  margin-bottom: 30px; }
+  .select-container .select {
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid #a6b0b9;
+    color: #e1e5e8;
+    font-size: 16px;
+    height: 40px;
+    outline: none; }
+    .select-container .select:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px #272d39 inset; }
+    .select-container .select:-webkit-autofill {
+      -webkit-text-fill-color: #e1e5e8 !important; }
+    .select-container .select::placeholder {
+      color: #a6b0b9;
+      opacity: 1; }
+    .select-container .select:-ms-select-placeholder {
+      color: #a6b0b9; }
+    .select-container .select::-ms-select-placeholder {
+      color: #a6b0b9; }
+    .select-container .select.isInValid {
+      border-color: #e74c3c; }
+  .select-container .error-msg {
     color: #e74c3c;
     font-size: 13px;
     margin-top: 10px; }
@@ -202,28 +254,28 @@ body,
 .create-profile-container {
   width: 100%;
   height: 100%;
-  padding: 20px;
   background: #272d39;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
   color: #e1e5e8; }
   .create-profile-container .header-title {
     color: #e1e5e8;
+    padding-bottom: 20px;
     font-size: 38px; }
   .create-profile-container .kicker {
-    padding-bottom: 20px; }
+    padding-bottom: 40px; }
   .create-profile-container .create-profile-form {
     max-width: 600px;
     width: 80%; }
-    .create-profile-container .create-profile-form .create-profile-container {
-      margin-bottom: 30px; }
-      .create-profile-container .create-profile-form .create-profile-container .error-msg {
-        color: #e74c3c;
-        font-size: 13px;
-        margin-top: 10px; }
-    .create-profile-container .create-profile-form .button-create-profile {
+    .create-profile-container .create-profile-form .error-msg {
+      color: #e74c3c;
+      font-size: 13px;
+      margin-top: 10px; }
+    .create-profile-container .create-profile-form .input-description {
+      font-size: 12px;
+      padding-bottom: 20px; }
+    .create-profile-container .create-profile-form .submit-button {
       width: 100%;
       margin-bottom: 15px;
       padding: 10px;
@@ -233,5 +285,5 @@ body,
       color: #e1e5e8;
       font-size: 16px;
       cursor: pointer; }
-      .create-profile-container .create-profile-form .button-create-profile:hover, .create-profile-container .create-profile-form .button-create-profile:active, .create-profile-container .create-profile-form .button-create-profile:focus {
+      .create-profile-container .create-profile-form .submit-button:hover, .create-profile-container .create-profile-form .submit-button:active, .create-profile-container .create-profile-form .submit-button:focus {
         background-color: #5FB68C; }

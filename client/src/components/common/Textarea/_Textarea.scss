@@ -1,0 +1,9 @@
+@import './styles/mobile.scss';
+
+@media (min-width: $viewport-tablet) {
+  @import './styles/tablet.scss';
+}
+
+@media (min-width: $viewport-desktop) {
+  @import './styles/desktop.scss';
+}

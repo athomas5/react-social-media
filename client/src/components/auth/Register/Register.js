@@ -11,10 +11,10 @@ class Register extends Component {
     super();
 
     this.state = {
-      userName: "",
-      userEmail: "",
-      userPassword: "",
-      userPassword2: "",
+      name: "",
+      email: "",
+      password: "",
+      password2: "",
       errors: { name: "", email: "", password: "", password2: "" }
     };
   }
@@ -33,19 +33,19 @@ class Register extends Component {
 
   handleOnChange(e) {
     if (e.target.id === "name-input") {
-      this.setState({ userName: e.target.value });
+      this.setState({ name: e.target.value });
     }
 
     if (e.target.id === "email-input") {
-      this.setState({ userEmail: e.target.value });
+      this.setState({ email: e.target.value });
     }
 
     if (e.target.id === "password-input") {
-      this.setState({ userPassword: e.target.value });
+      this.setState({ password: e.target.value });
     }
 
     if (e.target.id === "password2-input") {
-      this.setState({ userPassword2: e.target.value });
+      this.setState({ password2: e.target.value });
     }
   }
 
@@ -53,10 +53,10 @@ class Register extends Component {
     e.preventDefault();
 
     const user = {
-      name: this.state.userName,
-      email: this.state.userEmail,
-      password: this.state.userPassword,
-      password2: this.state.userPassword2
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2
     };
 
     this.props.registerUser(user, this.props.history);
@@ -76,7 +76,7 @@ class Register extends Component {
             type="text"
             class="input input-name"
             placeholder="Full Name"
-            value={this.state.userName}
+            value={this.state.name}
             error={this.state.errors.name}
             isInValid={this.state.errors.name !== undefined && this.state.errors.name !== ""}
             onChange={e => this.handleOnChange(e)}
@@ -87,7 +87,7 @@ class Register extends Component {
             type="email"
             class="input input-email"
             placeholder="Email address"
-            value={this.state.userEmail}
+            value={this.state.email}
             error={this.state.errors.email}
             isInValid={this.state.errors.email !== undefined && this.state.errors.email !== ""}
             onChange={e => this.handleOnChange(e)}
@@ -98,7 +98,7 @@ class Register extends Component {
             type="password"
             class="input input-password"
             placeholder="Password"
-            value={this.state.userPassword}
+            value={this.state.password}
             error={this.state.errors.password}
             isInValid={this.state.errors.password !== undefined && this.state.errors.password !== ""}
             onChange={e => this.handleOnChange(e)}
@@ -109,13 +109,13 @@ class Register extends Component {
             type="password"
             class="input input-password"
             placeholder="Confirm Password"
-            value={this.state.userPassword2}
+            value={this.state.password2}
             error={this.state.errors.password2}
             isInValid={this.state.errors.password2 !== undefined && this.state.errors.password2 !== ""}
             onChange={e => this.handleOnChange(e)}
           />
 
-          <button className="button-login-register" type="submit">Register</button>
+          <button className="submit-button" type="submit">Register</button>
         </form>
       </section>
     );

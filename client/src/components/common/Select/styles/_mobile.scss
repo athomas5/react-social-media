@@ -1,0 +1,37 @@
+.select-container {
+  margin-bottom: 30px;
+
+  .select {
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid $font-dark;
+    color: $font-cloud;
+    font-size: 16px;
+    height: 40px;
+    outline: none;
+    @include chrome-autofill-styles($bg-medium-blue, $font-cloud);
+
+    &::placeholder {
+      color: $font-dark;
+      opacity: 1;
+    }
+
+    &:-ms-select-placeholder {
+      color: $font-dark;
+    }
+
+    &::-ms-select-placeholder {
+      color: $font-dark;
+    }
+    
+    &.isInValid {
+      border-color: $error-red;
+    }
+  }
+
+  .error-msg {
+    color: $error-red;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+}
