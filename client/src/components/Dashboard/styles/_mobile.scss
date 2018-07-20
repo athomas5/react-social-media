@@ -1,8 +1,8 @@
 .dashboard-container {
-  width: 100%;
-  padding: $container-padding;
-  background: $bg-medium-blue;
-  color: $font-cloud;
+  .user-name {
+    color: $font-cloud;
+    font-style: italic;
+  }
 
   .text-container {
     margin-left: 50px;
@@ -25,5 +25,15 @@
 
   .create-profile {
     @include button($primay-green, $secondary-green);
+  }
+
+  .delete-account {
+    @include button(#e74c3c, #e74c3c);
+    width: auto;
+    margin-top: 40px;
+
+    &:hover {
+      opacity: .8;
+    }
   }
 }

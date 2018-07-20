@@ -14,7 +14,10 @@ body,
   height: 100%; }
 
 .component-container {
-  padding: 20px; }
+  width: 100%;
+  padding: 20px;
+  background: #272d39;
+  color: #e1e5e8; }
 
 .footer-container {
   width: 100%;
@@ -222,34 +225,72 @@ body,
     font-size: 13px;
     margin-top: 10px; }
 
-.dashboard-container {
+.dashboard-container .user-name {
+  color: #e1e5e8;
+  font-style: italic; }
+
+.dashboard-container .text-container {
+  margin-left: 50px; }
+
+.dashboard-container .title {
+  font-size: 38px;
+  padding-bottom: 20px; }
+
+.dashboard-container .welcome-message {
+  padding-bottom: 10px; }
+
+.dashboard-container .description {
+  font-size: 19px;
+  padding-bottom: 15px;
+  margin-bottom: 30px; }
+
+.dashboard-container .create-profile {
   width: 100%;
-  padding: 20px;
-  background: #272d39;
-  color: #e1e5e8; }
-  .dashboard-container .text-container {
-    margin-left: 50px; }
-  .dashboard-container .title {
-    font-size: 38px;
-    padding-bottom: 20px; }
-  .dashboard-container .welcome-message {
-    padding-bottom: 10px; }
-  .dashboard-container .description {
-    font-size: 19px;
-    padding-bottom: 15px;
-    margin-bottom: 30px; }
-  .dashboard-container .create-profile {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #6ED9A0;
+  border: none;
+  color: #e1e5e8;
+  font-size: 16px;
+  cursor: pointer; }
+  .dashboard-container .create-profile:hover, .dashboard-container .create-profile:active, .dashboard-container .create-profile:focus {
+    background-color: #5FB68C; }
+
+.dashboard-container .delete-account {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #e74c3c;
+  border: none;
+  color: #e1e5e8;
+  font-size: 16px;
+  cursor: pointer;
+  width: auto;
+  margin-top: 40px; }
+  .dashboard-container .delete-account:hover, .dashboard-container .delete-account:active, .dashboard-container .delete-account:focus {
+    background-color: #e74c3c; }
+  .dashboard-container .delete-account:hover {
+    opacity: .8; }
+
+.profileActions-container {
+  padding-top: 20px; }
+  .profileActions-container .profileAction-button {
     width: 100%;
     margin-bottom: 15px;
     padding: 10px;
     border-radius: 3px;
-    background-color: #6ED9A0;
+    background-color: #f0f2f4;
     border: none;
     color: #e1e5e8;
     font-size: 16px;
-    cursor: pointer; }
-    .dashboard-container .create-profile:hover, .dashboard-container .create-profile:active, .dashboard-container .create-profile:focus {
-      background-color: #5FB68C; }
+    cursor: pointer;
+    width: auto;
+    color: #5B666B;
+    margin-right: 15px; }
+    .profileActions-container .profileAction-button:hover, .profileActions-container .profileAction-button:active, .profileActions-container .profileAction-button:focus {
+      background-color: #ccc; }
 
 .create-profile-container {
   width: 100%;

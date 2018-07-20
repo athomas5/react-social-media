@@ -42,5 +42,8 @@ body,
 }
 
 .component-container {
+  width: 100%;
   padding: $container-padding;
+  background: $bg-medium-blue;
+  color: $font-cloud;
 }

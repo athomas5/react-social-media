@@ -1,0 +1,10 @@
+.profileActions-container {
+  padding-top: 20px;
+
+  .profileAction-button {
+    @include button($bg-light, #ccc);
+    width: auto;
+    color: $font-gray;
+    margin-right: 15px;
+  }
+}
