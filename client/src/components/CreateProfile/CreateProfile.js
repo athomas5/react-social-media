@@ -206,6 +206,8 @@ class CreateProfile extends Component{
             isInValid={this.state.errors.bio !== undefined && this.state.errors.bio !== ''}
           />
 
+          <p className="required">*required</p>
+
           <button className='submit-button' type='submit'>Submit</button>
         </form>
       </section>

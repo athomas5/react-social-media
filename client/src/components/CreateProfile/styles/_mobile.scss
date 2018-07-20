@@ -36,5 +36,9 @@
     .submit-button {
       @include button($primay-green, $secondary-green);
     }
+
+    .required {
+      padding-bottom: 20px;
+    }
   }
 }

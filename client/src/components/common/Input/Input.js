@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Input = props => {
   return (
@@ -15,5 +16,21 @@ const Input = props => {
     </div>
   )
 }
+
+Input.defaultProps = {
+  isValid: true,
+  error: ''
+};
+
+Input.propTypes = {
+  id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  class: PropTypes.string.isRequired,
+  isValid: PropTypes.bool,
+  placeholder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  error: PropTypes.string
+};
 
 export default  Input;
