@@ -2,12 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Select = props => {
-
-  const getOptions = options => {
-    return options.map(option => (
-      <option value={option.text.toLowerCase()} key={option.key}>{option.text}</option>
-    ));
-  }
+  const selectOptions = props.options.map(option => (
+    <option value={option.text.toLowerCase()} key={option.key}>{option.text}</option>
+  ));
 
   return (
     <div className='select-container'>
@@ -19,7 +16,7 @@ const Select = props => {
         value={props.value}
         onChange={e => props.onChange(e)} 
       >
-        {getOptions(props.options)}
+        {selectOptions}
       </select>
       {props.error && (<p className='error-msg'>{props.error}</p>)}
     </div>

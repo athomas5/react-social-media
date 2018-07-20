@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createProfile } from '../../actions/profileActions';
 
 import Input from '../common/Input/Input';
 import Textarea from '../common/Textarea/Textarea';
@@ -11,7 +13,6 @@ class CreateProfile extends Component{
     super(props);
 
     this.state = {
-      displaySocialInputs: false,
       handle: '',
       status: '',
       company: '',
@@ -27,6 +28,12 @@ class CreateProfile extends Component{
       instagram: '',
       errors: {}
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.errors !== this.props.errors) {
+      this.setState({ errors: this.props.errors });
+    }
   }
 
   handleOnChange = e => {
@@ -58,6 +65,26 @@ class CreateProfile extends Component{
       this.setState({ github: e.target.value });
     }
 
+    if (e.target.id === 'twitter-input') {
+      this.setState({ twitter: e.target.value });
+    }
+
+    if (e.target.id === 'facebook-input') {
+      this.setState({ facebook: e.target.value });
+    }
+
+    if (e.target.id === 'linkedin-input') {
+      this.setState({ linkedin: e.target.value });
+    }
+
+    if (e.target.id === 'youtube-input') {
+      this.setState({ youtube: e.target.value });
+    }
+
+    if (e.target.id === 'instagram-input') {
+      this.setState({ instagram: e.target.value });
+    }
+
     if (e.target.id === 'bio-input') {
       this.setState({ bio: e.target.value });
     }
@@ -82,9 +109,7 @@ class CreateProfile extends Component{
       instagram: this.state.instagram
     }
 
-    console.log(JSON.stringify(profile, undefined, 2))
-
-    // this.props.getCurrentProfile(profile, this.props.history);
+    this.props.createProfile(profile, this.props.history);
   }
 
   render() {
@@ -120,9 +145,7 @@ class CreateProfile extends Component{
             onChange={this.handleOnChange}
           />
 
-          <p className="input-description">
-            A unique handle for your profile URL. Your full name, company name etc (Can't be changed later)
-          </p>
+          <p className="input-description">A unique handle for your profile URL. Your full name, company name etc (Can't be changed later)</p>
 
           <Select
             id='status-input'
@@ -173,16 +196,14 @@ class CreateProfile extends Component{
             id='skills-input'
             type='text'
             class='input input-skills'
-            placeholder='Skills'
+            placeholder='* Skills'
             value={this.state.skills}
             error={this.state.errors.skills}
             onChange={e => this.handleOnChange(e)}
             isInValid={this.state.errors.skills !== undefined && this.state.errors.skills !== ''}
           />
 
-          <p className="input-description">
-            Please use comma seperated values (eg. HTML, CSS, JavaScript...)
-          </p>
+          <p className="input-description">Please use comma seperated values (eg. HTML, CSS, JavaScript...)</p>
 
           <Input
             id='github-input'
@@ -193,6 +214,61 @@ class CreateProfile extends Component{
             error={this.state.errors.github}
             onChange={e => this.handleOnChange(e)}
             isInValid={this.state.errors.github !== undefined && this.state.errors.github !== ''}
+          />
+
+          <Input
+            id='twitter-input'
+            type='text'
+            class='input input-twitter'
+            placeholder='Twitter'
+            value={this.state.twitter}
+            error={this.state.errors.twitter}
+            onChange={e => this.handleOnChange(e)}
+            isInValid={this.state.errors.twitter !== undefined && this.state.errors.twitter !== ''}
+          />
+
+          <Input
+            id='facebook-input'
+            type='text'
+            class='input input-facebook'
+            placeholder='Facebook'
+            value={this.state.facebook}
+            error={this.state.errors.facebook}
+            onChange={e => this.handleOnChange(e)}
+            isInValid={this.state.errors.facebook !== undefined && this.state.errors.facebook !== ''}
+          />
+
+          <Input
+            id='linkedin-input'
+            type='text'
+            class='input input-linkedin'
+            placeholder='LinkedIn'
+            value={this.state.linkedin}
+            error={this.state.errors.linkedin}
+            onChange={e => this.handleOnChange(e)}
+            isInValid={this.state.errors.linkedin !== undefined && this.state.errors.linkedin !== ''}
+          />
+
+          <Input
+            id='youtube-input'
+            type='text'
+            class='input input-youtube'
+            placeholder='Youtube'
+            value={this.state.youtube}
+            error={this.state.errors.youtube}
+            onChange={e => this.handleOnChange(e)}
+            isInValid={this.state.errors.youtube !== undefined && this.state.errors.youtube !== ''}
+          />
+
+          <Input
+            id='instagram-input'
+            type='text'
+            class='input input-instagram'
+            placeholder='Instagram'
+            value={this.state.instagram}
+            error={this.state.errors.instagram}
+            onChange={e => this.handleOnChange(e)}
+            isInValid={this.state.errors.instagram !== undefined && this.state.errors.instagram !== ''}
           />
 
           <Textarea
@@ -216,8 +292,9 @@ class CreateProfile extends Component{
 }
 
 CreateProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
+  errors: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -225,4 +302,4 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, null)(CreateProfile);
+export default connect(mapStateToProps, { createProfile })(withRouter(CreateProfile));
