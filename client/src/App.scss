@@ -12,10 +12,10 @@
 @import './css/register.scss';
 
 // ----- Common ----- //
-@import './css/spinner.scss';
-@import './css/input.scss';
-@import './css/Textarea.scss';
-@import './css/select.scss';
+@import './css/common/input.scss';
+@import './css/common/textarea.scss';
+@import './css/common/select.scss';
+@import './css/common/spinner.scss';
 
 // ----- Regular Component ----- //
 @import './css/dashboard.scss';

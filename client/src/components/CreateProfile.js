@@ -4,9 +4,9 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createProfile } from '../actions/profileActions';
 
-import Input from './Input';
-import Textarea from './Textarea';
-import Select from './Select';
+import Input from './common/Input';
+import Textarea from './common/Textarea';
+import Select from './common/Select';
 
 class CreateProfile extends Component{
   constructor(props) {

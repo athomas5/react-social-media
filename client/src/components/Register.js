@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { registerUser } from '../actions/authActions';
 
-import Input from './Input';
+import Input from './common/Input';
 
 class Register extends Component {
   constructor() {
