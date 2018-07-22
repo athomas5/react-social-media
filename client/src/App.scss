@@ -1,26 +1,24 @@
 // ----- Shared Styles ----- //
-@import './shared-styles/styles.scss';
-@import './shared-styles/utils.scss';
+@import './css/styles.scss';
+@import './css/utils.scss';
 
 // ----- Layout ----- //
-@import './components/layout/Footer/Footer.scss';
-@import './components/layout/Landing/Landing.scss';
-@import './components/layout/Header/Header.scss';
+@import './css/footer.scss';
+@import './css/landing.scss';
+@import './css/header.scss';
 
 // ----- Auth ----- //
-// @import './components/auth/Input/Input.scss';
-@import './components/auth/Login/Login.scss';
-@import './components/auth/Register/Register.scss';
+@import './css/login.scss';
+@import './css/register.scss';
 
 // ----- Common ----- //
-@import './components/common/Spinner/Spinner.scss';
-@import './components/common/Input/Input.scss';
-@import './components/common/Textarea/Textarea.scss';
-@import './components/common/Select/Select.scss';
-
+@import './css/spinner.scss';
+@import './css/input.scss';
+@import './css/Textarea.scss';
+@import './css/select.scss';
 
 // ----- Regular Component ----- //
-@import './components/Dashboard/Dashboard.scss';
-@import './components/Dashboard/ProfileActions/ProfileActions.scss';
-@import './components/CreateProfile/CreateProfile.scss';
-@import './components/EditProfile/EditProfile.scss';
+@import './css/dashboard.scss';
+@import './css/profileActions.scss';
+@import './css/createProfile.scss';
+@import './css/editProfile.scss';

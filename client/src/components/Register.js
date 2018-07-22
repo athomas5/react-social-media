@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { registerUser } from '../../../actions/authActions';
+import { registerUser } from '../actions/authActions';
 
-import Input from '../../common/Input/Input';
+import Input from './Input';
 
 class Register extends Component {
   constructor() {
@@ -32,21 +32,8 @@ class Register extends Component {
   }
 
   handleOnChange(e) {
-    if (e.target.id === "name-input") {
-      this.setState({ name: e.target.value });
-    }
-
-    if (e.target.id === "email-input") {
-      this.setState({ email: e.target.value });
-    }
-
-    if (e.target.id === "password-input") {
-      this.setState({ password: e.target.value });
-    }
-
-    if (e.target.id === "password2-input") {
-      this.setState({ password2: e.target.value });
-    }
+    const inputType = e.target.id.substring(0, e.target.id.indexOf('-'));
+    this.setState({ [inputType]: e.target.value });
   }
 
   onSubmit(e) {

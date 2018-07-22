@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createProfile, getCurrentProfile } from '../../actions/profileActions';
-import isEmpty from '../../validation/is-empty';
+import { createProfile, getCurrentProfile } from '../actions/profileActions';
+import isEmpty from '../validation/is-empty';
 
-import Input from '../common/Input/Input';
-import Textarea from '../common/Textarea/Textarea';
-import Select from '../common/Select/Select';
+import Input from './Input';
+import Textarea from './Textarea';
+import Select from './Select';
 
 class CreateProfile extends Component{
   constructor(props) {
@@ -78,57 +78,8 @@ class CreateProfile extends Component{
   }
 
   handleOnChange = e => {
-    if (e.target.id === 'handle-input') {
-      this.setState({ handle: e.target.value });
-    }
-
-    if (e.target.id === 'status-input') {
-      this.setState({ status: e.target.value });
-    }
-
-    if (e.target.id === 'company-input') {
-      this.setState({ company: e.target.value });
-    }
-
-    if (e.target.id === 'website-input') {
-      this.setState({ website: e.target.value });
-    }
-
-    if (e.target.id === 'location-input') {
-      this.setState({ location: e.target.value });
-    }
-
-    if (e.target.id === 'skills-input') {
-      this.setState({ skills: e.target.value });
-    }
-
-    if (e.target.id === 'github-input') {
-      this.setState({ github: e.target.value });
-    }
-
-    if (e.target.id === 'twitter-input') {
-      this.setState({ twitter: e.target.value });
-    }
-
-    if (e.target.id === 'facebook-input') {
-      this.setState({ facebook: e.target.value });
-    }
-
-    if (e.target.id === 'linkedin-input') {
-      this.setState({ linkedin: e.target.value });
-    }
-
-    if (e.target.id === 'youtube-input') {
-      this.setState({ youtube: e.target.value });
-    }
-
-    if (e.target.id === 'instagram-input') {
-      this.setState({ instagram: e.target.value });
-    }
-
-    if (e.target.id === 'bio-input') {
-      this.setState({ bio: e.target.value });
-    }
+    const inputType = e.target.id.substring(0, e.target.id.indexOf('-'));
+    this.setState({ [inputType]: e.target.value });
   }
 
   onSubmit = e => {

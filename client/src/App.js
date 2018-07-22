@@ -7,16 +7,16 @@ import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
 import store from './store';
 
-import PrivateRoute from './components/common/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute';
 
-import Landing from './components/layout/Landing/Landing';
-import Header from './components/layout/Header/Header';
-import Footer from './components/layout/Footer/Footer';
-import Login from './components/auth/Login/Login';
-import Register from './components/auth/Register/Register';
-import Dashboard from './components/Dashboard/Dashboard';
-import CreateProfile from './components/CreateProfile/CreateProfile';
-import EditProfile from './components/EditProfile/EditProfile';
+import Landing from './components/Landing';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Login from './components/Login';
+import Register from './components/Register';
+import Dashboard from './components/Dashboard';
+import CreateProfile from './components/CreateProfile';
+import EditProfile from './components/EditProfile';
 
 import './App.css';
 
