@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { getCurrentProfile, deleteAccount } from '../actions/profileActions';
 
 import ProfileActions from './ProfileActions';
+import Experience from './Experience';
+import Education from './Education';
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -34,6 +36,8 @@ class Dashboard extends Component {
         return (
           <React.Fragment>
             <h2 className="welcome-message">Welcome <Link to={`/profile/${profile.handle}`}><span className="user-name">{user.name}</span></Link></h2>
+            <Experience experience={profile.experience} />
+            <Education education={profile.education} />
             <ProfileActions />
             <button className="delete-account" onClick={this.onDeleteAccound}>Delete Account</button>
           </React.Fragment>
