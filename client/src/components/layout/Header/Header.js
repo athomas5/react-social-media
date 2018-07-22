@@ -17,6 +17,7 @@ class Header extends Component {
 
     const authHeader = (
       <section className="component-container header-container">
+      <Link to="/dashboard" className="nav-link nav-link-dashboard">Dashboard</Link>
         <img 
           className="profile-image"
           src={user.avatar} 

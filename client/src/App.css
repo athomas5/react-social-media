@@ -61,7 +61,7 @@ body,
     width: 25px;
     height: 25px;
     border-radius: 50px;
-    margin: 5px 10px 6px 0; }
+    margin: 5px 10px 6px; }
 
 .login-container {
   width: 100%;
@@ -329,4 +329,39 @@ body,
       .create-profile-container .create-profile-form .submit-button:hover, .create-profile-container .create-profile-form .submit-button:active, .create-profile-container .create-profile-form .submit-button:focus {
         background-color: #5FB68C; }
     .create-profile-container .create-profile-form .required {
+      padding-bottom: 20px; }
+
+.edit-profile-container {
+  height: 100%;
+  background: #272d39;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .edit-profile-container .header-title {
+    color: #e1e5e8;
+    padding-bottom: 20px;
+    font-size: 38px; }
+  .edit-profile-container .create-profile-form {
+    max-width: 600px;
+    width: 80%; }
+    .edit-profile-container .create-profile-form .error-msg {
+      color: #e74c3c;
+      font-size: 13px;
+      margin-top: 10px; }
+    .edit-profile-container .create-profile-form .input-description {
+      font-size: 12px;
+      padding-bottom: 20px; }
+    .edit-profile-container .create-profile-form .submit-button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 3px;
+      background-color: #6ED9A0;
+      border: none;
+      color: #e1e5e8;
+      font-size: 16px;
+      cursor: pointer; }
+      .edit-profile-container .create-profile-form .submit-button:hover, .edit-profile-container .create-profile-form .submit-button:active, .edit-profile-container .create-profile-form .submit-button:focus {
+        background-color: #5FB68C; }
+    .edit-profile-container .create-profile-form .required {
       padding-bottom: 20px; }

@@ -1,0 +1,37 @@
+.edit-profile-container {
+  height: 100%;
+  background: $bg-medium-blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header-title {
+    color: $font-cloud;
+    padding-bottom: 20px;
+    font-size: 38px;
+  }
+
+  .create-profile-form {
+    max-width: 600px;
+    width: 80%;
+    
+    .error-msg {
+      color: $error-red;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    .input-description {
+      font-size: 12px;
+      padding-bottom: 20px;
+    }
+
+    .submit-button {
+      @include button($primay-green, $secondary-green);
+    }
+
+    .required {
+      padding-bottom: 20px;
+    }
+  }
+}
