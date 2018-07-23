@@ -17,7 +17,9 @@ import Register from './components/Register';
 import Dashboard from './components/Dashboard';
 import CreateProfile from './components/CreateProfile';
 import EditProfile from './components/EditProfile';
+import AddExperience from './components/AddExperience';
 
+import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
 
 const checkForToken = () => {
@@ -54,6 +56,7 @@ class App extends Component {
             <Switch><PrivateRoute exact path='/create-profile' component={CreateProfile} /></Switch>
             <Switch><PrivateRoute exact path='/dashboard' component={Dashboard} /></Switch>
             <Switch><PrivateRoute exact path='/edit-profile' component={EditProfile} /></Switch>
+            <Switch><PrivateRoute exact path='/add-experience' component={AddExperience} /></Switch>
 
             <Footer />
           </div>
