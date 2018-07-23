@@ -24,16 +24,10 @@
   }
 
   .create-profile {
-    @include button($primay-green, $secondary-green);
+    @include button(auto, $primay-green, $secondary-green);
   }
 
   .delete-account {
-    @include button(#e74c3c, #e74c3c);
-    width: auto;
-    margin-top: 40px;
-
-    &:hover {
-      opacity: .8;
-    }
+    margin-top: 30px;
   }
 }

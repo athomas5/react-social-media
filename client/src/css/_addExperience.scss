@@ -1,0 +1,20 @@
+.add-experience-container {
+  .go-back {
+    @include button(auto, $bg-light, #ccc);
+    color: $font-gray;
+  }
+
+  .header {
+    text-align: center;
+  }  
+
+  .add-experience-form {
+    max-width: 600px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .submit-button {
+    @include button(100%, $primay-green, $secondary-green);
+  }
+}

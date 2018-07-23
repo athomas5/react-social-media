@@ -39,7 +39,7 @@ class Dashboard extends Component {
             <Experience experience={profile.experience} />
             <Education education={profile.education} />
             <ProfileActions />
-            <button className="delete-account" onClick={this.onDeleteAccound}>Delete Account</button>
+            <button className="delete-account waves-effect waves-light btn red" onClick={this.onDeleteAccound}>Delete Account</button>
           </React.Fragment>
         );
       } else {

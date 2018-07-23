@@ -29,7 +29,7 @@
     }
 
     .submit-button {
-      @include button($primay-green, $secondary-green);
+      @include button(100%, $primay-green, $secondary-green);
     }
 
     .forgot-password {

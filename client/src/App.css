@@ -245,7 +245,7 @@ body,
   margin-bottom: 30px; }
 
 .dashboard-container .create-profile {
-  width: 100%;
+  width: auto;
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 3px;
@@ -258,39 +258,14 @@ body,
     background-color: #5FB68C; }
 
 .dashboard-container .delete-account {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 3px;
-  background-color: #e74c3c;
-  border: none;
-  color: #e1e5e8;
-  font-size: 16px;
-  cursor: pointer;
-  width: auto;
-  margin-top: 40px; }
-  .dashboard-container .delete-account:hover, .dashboard-container .delete-account:active, .dashboard-container .delete-account:focus {
-    background-color: #e74c3c; }
-  .dashboard-container .delete-account:hover {
-    opacity: .8; }
+  margin-top: 30px; }
 
 .profileActions-container {
   padding-top: 20px; }
-  .profileActions-container .profileAction-button {
-    width: 100%;
+  .profileActions-container .action-button {
+    margin-right: 15px;
     margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 3px;
-    background-color: #f0f2f4;
-    border: none;
-    color: #e1e5e8;
-    font-size: 16px;
-    cursor: pointer;
-    width: auto;
-    color: #5B666B;
-    margin-right: 15px; }
-    .profileActions-container .profileAction-button:hover, .profileActions-container .profileAction-button:active, .profileActions-container .profileAction-button:focus {
-      background-color: #ccc; }
+    width: 200px; }
 
 .create-profile-container {
   width: 100%;
@@ -365,3 +340,38 @@ body,
         background-color: #5FB68C; }
     .edit-profile-container .create-profile-form .required {
       padding-bottom: 20px; }
+
+.add-experience-container .go-back {
+  width: auto;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #f0f2f4;
+  border: none;
+  color: #e1e5e8;
+  font-size: 16px;
+  cursor: pointer;
+  color: #5B666B; }
+  .add-experience-container .go-back:hover, .add-experience-container .go-back:active, .add-experience-container .go-back:focus {
+    background-color: #ccc; }
+
+.add-experience-container .header {
+  text-align: center; }
+
+.add-experience-container .add-experience-form {
+  max-width: 600px;
+  width: 80%;
+  margin: 0 auto; }
+
+.add-experience-container .submit-button {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #6ED9A0;
+  border: none;
+  color: #e1e5e8;
+  font-size: 16px;
+  cursor: pointer; }
+  .add-experience-container .submit-button:hover, .add-experience-container .submit-button:active, .add-experience-container .submit-button:focus {
+    background-color: #5FB68C; }

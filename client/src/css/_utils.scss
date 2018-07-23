@@ -1,6 +1,6 @@
 // Mixins
-@mixin button($color-primary, $color-secondary) {
-  width: 100%;
+@mixin button($width, $color-primary, $color-secondary) {
+  width: $width;
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 3px;
@@ -16,7 +16,6 @@
     background-color: $color-secondary;
   }
 }
-
 
 @mixin chrome-autofill-styles($bg-color, $font-color) {
   &:-webkit-autofill {
