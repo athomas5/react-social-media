@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { addExperience } from '../actions/profileActions';
 
 import Input from './common/Input';
 import Textarea from './common/Textarea';
@@ -23,6 +24,12 @@ class AddExperience extends Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.errors !== this.props.errors) {
+      this.setState({ errors: this.props.errors });
+    }
+  }
+
   handleOnChange = e => {
     const inputType = e.target.id.substring(0, e.target.id.indexOf('-'));
     this.setState({ [inputType]: e.target.value });
@@ -31,12 +38,17 @@ class AddExperience extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    const user = {
-      email: this.state.email,
-      password: this.state.password
+    const experience = {
+      company: this.state.company,
+      title: this.state.title,
+      location: this.state.location,
+      from: this.state.from,
+      to: this.state.to,
+      current: this.state.current,
+      description: this.state.description
     }
 
-    this.props.loginUser(user, );
+    this.props.addExperience(experience, this.props.history);
   }
 
   onCheck = e => {
@@ -77,6 +89,17 @@ class AddExperience extends Component {
             value={this.state.title}
             error={this.state.errors.title}
             isInValid={this.state.errors.title !== undefined && this.state.errors.title !== ''}
+            onChange={this.handleOnChange}
+          />
+
+          <Input
+            id='location-input'
+            type='location'
+            class='input input-location'
+            placeholder='From date'
+            value={this.state.location}
+            error={this.state.errors.location}
+            isInValid={this.state.errors.location !== undefined && this.state.errors.location !== ''}
             onChange={this.handleOnChange}
           />
 
@@ -121,6 +144,7 @@ class AddExperience extends Component {
 }
 
 AddExperience.propTypes = {
+  addExperience: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
@@ -130,4 +154,4 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps)(withRouter(AddExperience));
+export default connect(mapStateToProps, { addExperience })(withRouter(AddExperience));

@@ -16,7 +16,7 @@ module.exports = function validateEducationInput(data) {
 const convertMissingInputToEmptyString = data => {
   data.school = !isEmpty(data.school) ? data.school : '';
   data.degree = !isEmpty(data.degree) ? data.degree : '';
-  data.fieldofStudy = !isEmpty(data.fieldofStudy) ? data.fieldofStudy : '';
+  data.fieldOfStudy = !isEmpty(data.fieldOfStudy) ? data.fieldOfStudy : '';
   data.from = !isEmpty(data.from) ? data.from : '';
 
   return data;
@@ -39,8 +39,8 @@ const validateDegree = (errors, data) => {
 }
 
 const validateFieldofStudy = (errors, data) => {
-  if (validator.isEmpty(data.fieldofStudy)) {
-    errors.fieldofStudy = 'Field of Study field is required';
+  if (validator.isEmpty(data.fieldOfStudy)) {
+    errors.fieldOfStudy = 'Field of Study field is required';
   }
 
   return errors;

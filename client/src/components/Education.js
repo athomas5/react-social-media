@@ -5,13 +5,14 @@ import { withRouter } from 'react-router-dom';
 
 class Education extends Component {
   render() {
-    const education = this.props.education.map(exp => {
+    const education = this.props.education.map(edu => {
       return (
-        <div key={exp._id}>
-          <p>{exp.company}</p>
-          <p>{exp.title}</p>
-          <p>{exp.from} - {exp.to}</p>
-          <button>Delete</button>
+        <div key={edu._id}>
+          <p>{edu.school}</p>
+          <p>{edu.degree + ' ' + edu.fieldOfStudy}</p>
+          <p>{edu.from} - {edu.to}</p>
+          <p>{edu.description}</p>
+          {/* <button>Delete</button> */}
         </div>
       );
     });

@@ -5,7 +5,6 @@ const Textarea = props => {
   return (
     <div className='textarea-container'>
       <textarea 
-        rows='4'
         id={props.id}
         type={props.type}
         className={props.class + (props.isInValid ? ' isInValid' : '')}

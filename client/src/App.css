@@ -168,6 +168,7 @@ body,
   margin-bottom: 30px; }
   .textarea-container .textarea {
     width: 100%;
+    height: 140px;
     background-color: transparent;
     border: 2px solid #a6b0b9;
     color: #e1e5e8;
@@ -374,4 +375,39 @@ body,
   font-size: 16px;
   cursor: pointer; }
   .add-experience-container .submit-button:hover, .add-experience-container .submit-button:active, .add-experience-container .submit-button:focus {
+    background-color: #5FB68C; }
+
+.add-education-container .go-back {
+  width: auto;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #f0f2f4;
+  border: none;
+  color: #e1e5e8;
+  font-size: 16px;
+  cursor: pointer;
+  color: #5B666B; }
+  .add-education-container .go-back:hover, .add-education-container .go-back:active, .add-education-container .go-back:focus {
+    background-color: #ccc; }
+
+.add-education-container .header {
+  text-align: center; }
+
+.add-education-container .add-education-form {
+  max-width: 600px;
+  width: 80%;
+  margin: 0 auto; }
+
+.add-education-container .submit-button {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #6ED9A0;
+  border: none;
+  color: #e1e5e8;
+  font-size: 16px;
+  cursor: pointer; }
+  .add-education-container .submit-button:hover, .add-education-container .submit-button:active, .add-education-container .submit-button:focus {
     background-color: #5FB68C; }

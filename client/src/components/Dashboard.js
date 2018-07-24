@@ -57,7 +57,6 @@ class Dashboard extends Component {
       <section className="dashboard-container component-container">
         <h1 className="title">Dashboard</h1>
         {this.getDashboardContent()}
-        {/* TODO: exp and edu */}
       </section>
     )
   }

@@ -11,7 +11,8 @@ class Experience extends Component {
           <p>{exp.company}</p>
           <p>{exp.title}</p>
           <p>{exp.from} - {exp.to}</p>
-          <button>Delete</button>
+          <p>{exp.description}</p>
+          {/* <button>Delete</button> */}
         </div>
       );
     });

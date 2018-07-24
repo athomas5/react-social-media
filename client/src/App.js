@@ -18,6 +18,7 @@ import Dashboard from './components/Dashboard';
 import CreateProfile from './components/CreateProfile';
 import EditProfile from './components/EditProfile';
 import AddExperience from './components/AddExperience';
+import AddEducation from './components/AddEducation';
 
 import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
@@ -57,6 +58,7 @@ class App extends Component {
             <Switch><PrivateRoute exact path='/dashboard' component={Dashboard} /></Switch>
             <Switch><PrivateRoute exact path='/edit-profile' component={EditProfile} /></Switch>
             <Switch><PrivateRoute exact path='/add-experience' component={AddExperience} /></Switch>
+            <Switch><PrivateRoute exact path='/add-education' component={AddEducation} /></Switch>
 
             <Footer />
           </div>
