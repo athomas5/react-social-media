@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -11,7 +11,7 @@ class Landing extends Component {
 
   render() {
     return (
-      <section className="component-container landing-container">
+      <section className="landing-container component-container">
         <div className="text-container">
           <h1 className="title">Social Media App</h1>
           <p className="description">

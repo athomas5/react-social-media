@@ -1,16 +1,16 @@
 .landing-container {
-  height: 80%;
+  min-height: calc(100% - 135px);
   background: $bg-medium-blue;
   color: $font-cloud;
   display: flex;
   justify-content: center;
-  
+  align-items: center;
+
   .text-container {
     max-width: 500px;
     text-align: center;
-    margin-top: 80px;
   }
-  
+
   .title {
     font-size: 38px;
     padding-bottom: 30px;
