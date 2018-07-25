@@ -76,8 +76,8 @@ class AddEducation extends Component {
             class='input input-school'
             placeholder='* School'
             value={this.state.school}
-            error={this.state.errors.school}
-            isInValid={this.state.errors.school !== undefined && this.state.errors.school !== ''}
+            error={errors.school}
+            isInValid={errors.school !== undefined && errors.school !== ''}
             onChange={this.handleOnChange}
           />
 
@@ -87,8 +87,8 @@ class AddEducation extends Component {
             class='input input-degree'
             placeholder='* Degree'
             value={this.state.degree}
-            error={this.state.errors.degree}
-            isInValid={this.state.errors.degree !== undefined && this.state.errors.degree !== ''}
+            error={errors.degree}
+            isInValid={errors.degree !== undefined && errors.degree !== ''}
             onChange={this.handleOnChange}
           />
 
@@ -96,10 +96,10 @@ class AddEducation extends Component {
             id='fieldOfStudy-input'
             type='fieldOfStudy'
             class='input input-fieldOfStudy'
-            placeholder='* Degree'
+            placeholder='* Field of study'
             value={this.state.fieldOfStudy}
-            error={this.state.errors.fieldOfStudy}
-            isInValid={this.state.errors.fieldOfStudy !== undefined && this.state.errors.fieldOfStudy !== ''}
+            error={errors.fieldOfStudy}
+            isInValid={errors.fieldOfStudy !== undefined && errors.fieldOfStudy !== ''}
             onChange={this.handleOnChange}
           />
 
@@ -109,8 +109,8 @@ class AddEducation extends Component {
             class='input input-from'
             placeholder='From date'
             value={this.state.from}
-            error={this.state.errors.from}
-            isInValid={this.state.errors.from !== undefined && this.state.errors.from !== ''}
+            error={errors.from}
+            isInValid={errors.from !== undefined && errors.from !== ''}
             onChange={this.handleOnChange}
           />
 
@@ -120,8 +120,8 @@ class AddEducation extends Component {
             class='input input-to'
             placeholder='To date'
             value={this.state.to}
-            error={this.state.errors.to}
-            isInValid={this.state.errors.to !== undefined && this.state.errors.to !== ''}
+            error={errors.to}
+            isInValid={errors.to !== undefined && errors.to !== ''}
             onChange={this.handleOnChange}
           />
 
@@ -129,11 +129,11 @@ class AddEducation extends Component {
             id='description-input'
             type='textarea'
             class='textarea textarea-description'
-            placeholder='Job Description'
+            placeholder='Description'
             value={this.state.description}
-            error={this.state.errors.description}
+            error={errors.description}
             onChange={e => this.handleOnChange(e)}
-            isInValid={this.state.errors.description !== undefined && this.state.errors.description !== ''}
+            isInValid={errors.description !== undefined && errors.description !== ''}
           />
 
           <button className='submit-button' type='submit'>Submit</button>

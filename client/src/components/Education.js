@@ -18,7 +18,9 @@ class Education extends Component {
           <Moment format="YYYY/MM/DD">{edu.from}</Moment> -
           {edu.to === null ? ' Present' : <Moment format="YYYY/MM/DD">{' ' + edu.to}</Moment>}
           <p>{edu.description}</p>
-          <button onClick={this.deleteEducation.bind(this, edu._id)}>Delete</button>
+          <button onClick={this.deleteEducation.bind(this, edu._id)} className="delete-account waves-effect waves-light btn red">
+            Delete
+          </button>
         </div>
       );
     });

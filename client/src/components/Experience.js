@@ -18,7 +18,9 @@ class Experience extends Component {
           <Moment format="YYYY/MM/DD">{exp.from}</Moment> -
           {exp.to === null ? ' Present' : <Moment format="YYYY/MM/DD">{' ' + exp.to}</Moment>}
           <p>{exp.description}</p>
-          <button onClick={this.deleteExperience.bind(this, exp._id)}>Delete</button>
+          <button onClick={this.deleteExperience.bind(this, exp._id)} className="delete-account waves-effect waves-light btn red">
+            Delete
+          </button>
         </div>
       );
     });

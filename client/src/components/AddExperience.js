@@ -51,10 +51,6 @@ class AddExperience extends Component {
     this.props.addExperience(experience, this.props.history);
   }
 
-  onCheck = e => {
-
-  }
-
   render() {
     const { errors } = this.state;
 
@@ -76,8 +72,8 @@ class AddExperience extends Component {
             class='input input-company'
             placeholder='* Company'
             value={this.state.company}
-            error={this.state.errors.company}
-            isInValid={this.state.errors.company !== undefined && this.state.errors.company !== ''}
+            error={errors.company}
+            isInValid={errors.company !== undefined && errors.company !== ''}
             onChange={this.handleOnChange}
           />
 
@@ -87,8 +83,8 @@ class AddExperience extends Component {
             class='input input-title'
             placeholder='* Job title'
             value={this.state.title}
-            error={this.state.errors.title}
-            isInValid={this.state.errors.title !== undefined && this.state.errors.title !== ''}
+            error={errors.title}
+            isInValid={errors.title !== undefined && errors.title !== ''}
             onChange={this.handleOnChange}
           />
 
@@ -96,10 +92,10 @@ class AddExperience extends Component {
             id='location-input'
             type='location'
             class='input input-location'
-            placeholder='From date'
+            placeholder='Location'
             value={this.state.location}
-            error={this.state.errors.location}
-            isInValid={this.state.errors.location !== undefined && this.state.errors.location !== ''}
+            error={errors.location}
+            isInValid={errors.location !== undefined && errors.location !== ''}
             onChange={this.handleOnChange}
           />
 
@@ -107,10 +103,10 @@ class AddExperience extends Component {
             id='from-input'
             type='from'
             class='input input-from'
-            placeholder='From date'
+            placeholder='* From date'
             value={this.state.from}
-            error={this.state.errors.from}
-            isInValid={this.state.errors.from !== undefined && this.state.errors.from !== ''}
+            error={errors.from}
+            isInValid={errors.from !== undefined && errors.from !== ''}
             onChange={this.handleOnChange}
           />
 
@@ -120,8 +116,8 @@ class AddExperience extends Component {
             class='input input-to'
             placeholder='To date'
             value={this.state.to}
-            error={this.state.errors.to}
-            isInValid={this.state.errors.to !== undefined && this.state.errors.to !== ''}
+            error={errors.to}
+            isInValid={errors.to !== undefined && errors.to !== ''}
             onChange={this.handleOnChange}
           />
 
@@ -131,9 +127,9 @@ class AddExperience extends Component {
             class='textarea textarea-description'
             placeholder='Job Description'
             value={this.state.description}
-            error={this.state.errors.description}
+            error={errors.description}
             onChange={e => this.handleOnChange(e)}
-            isInValid={this.state.errors.description !== undefined && this.state.errors.description !== ''}
+            isInValid={errors.description !== undefined && errors.description !== ''}
           />
 
           <button className='submit-button' type='submit'>Submit</button>
