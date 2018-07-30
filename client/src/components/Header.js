@@ -17,11 +17,12 @@ class Header extends Component {
 
     const authHeader = (
       <section className="component-container header-container">
+      <Link to="/profiles" className="nav-link nav-link-developers">Developers</Link>
       <Link to="/dashboard" className="nav-link nav-link-dashboard">Dashboard</Link>
-        <img 
+        <img
           className="profile-image"
-          src={user.avatar} 
-          alt="user-avatar" 
+          src={user.avatar}
+          alt="user-avatar"
           title="Must have Gravatar connected to email" />
         <a href="" className="nav-link nav-link-logout" onClick={this.onLogoutUser}>Logout</a>
       </section>
