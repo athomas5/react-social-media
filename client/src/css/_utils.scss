@@ -19,7 +19,7 @@
 
 @mixin chrome-autofill-styles($bg-color, $font-color) {
   &:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px $bg-color inset;
+    -webkit-box-shadow: 0 0 0 30px $bg-color inset !important;
   }
 
   &:-webkit-autofill {

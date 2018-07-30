@@ -8,7 +8,7 @@ class ProfileItem extends Component {
     const { profile } = this.props;
 
     return (
-      <div className="profile-item-component">
+      <div className="profile-item-container">
         {profile.handle}
       </div>
     );

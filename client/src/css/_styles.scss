@@ -42,6 +42,12 @@ body,
   height: 100%;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}
+
 .component-container {
   width: 100%;
   padding: $container-padding;
